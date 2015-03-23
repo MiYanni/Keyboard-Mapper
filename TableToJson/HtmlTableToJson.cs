@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Web.Script.Serialization;
 using CsQuery;
 
-namespace Parser.Valve.Commands
+namespace TableToJson
 {
     internal sealed class HtmlTableToJson
     {
@@ -105,7 +104,7 @@ namespace Parser.Valve.Commands
 
                 if ((rowCq.Is(":visible") || !Options.IgnoreHiddenRows) &&
                     (!isEmpty || !Options.IgnoreEmptyRows) &&
-                    !Convert.ToBoolean(rowCq.Data("ignore")))
+                    !Convert.ToBoolean((object) rowCq.Data("ignore")))
                 {
                     var cellIndex = 0;
                     if (!temp.ContainsKey(rowIndex))

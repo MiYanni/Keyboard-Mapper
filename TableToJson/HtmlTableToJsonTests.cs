@@ -1,15 +1,11 @@
-﻿#if UNIT_TEST
+﻿using System.Diagnostics.CodeAnalysis;
+#if UNIT_TEST
 #pragma warning disable 1591
 // ReSharper disable InconsistentNaming
 
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using NUnit.Framework;
 
-namespace Parser.Valve.Commands
+
+namespace TableToJson
 {
     [ExcludeFromCodeCoverage]
     [TestFixture]
