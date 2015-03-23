@@ -9,7 +9,9 @@ namespace TestTableToJson
         private static void Main(string[] args)
         {
             var test = new List(new DirectoryInfo(@"TestTable.html"));
-            Console.WriteLine(test.Create());
+            var json = test.Create();
+            Console.WriteLine(json);
+            File.WriteAllText(new DirectoryInfo(@"TestTable.json").ToString(), json);
             Console.WriteLine("Press any key to exit.");
             Console.ReadLine();
         }

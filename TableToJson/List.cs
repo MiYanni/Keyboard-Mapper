@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using CsQuery;
 
@@ -28,14 +27,14 @@ namespace TableToJson
         {
             //var dom = CQ.CreateFromUrl(Url);
             //var dom = CQ.CreateDocumentFromFile(@"..\TableToJson\TestTable.html");
-            var tables = _dom["table"];
-            var result = String.Empty;
-            tables.Each(table =>
-            {
-                var converter = new HtmlTableToJson(table);
-                result += converter.ToJson();
-            });
-            return result;
+            //var tables = _dom["table"];
+            //var result = String.Empty;
+            //tables.Each(table =>
+            //{
+            //    var converter = new HtmlTableToJson(table);
+            //    result += converter.ToJson();
+            //});
+            return new HtmlTableToJson(_dom["table"]).ToJson();
         }
     }
 }

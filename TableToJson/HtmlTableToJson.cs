@@ -8,15 +8,20 @@ namespace TableToJson
 {
     internal sealed class HtmlTableToJson
     {
-        public IDomObject Table { get; private set; }
+        public IEnumerable<IDomObject> Tables { get; private set; }
+
         public TableOptions Options { get; private set; }
 
-        public HtmlTableToJson(IDomObject table, TableOptions options = null)
+        public HtmlTableToJson(IEnumerable<IDomObject> tables, TableOptions options = null)
         {
-            Table = table;
+            Tables = tables;
             Options = options ?? new TableOptions();
         }
 
+        public HtmlTableToJson(IDomObject table, TableOptions options = null)
+            : this(new List<IDomObject> { table }, options)
+        {
+        }
 
         private string CellValues(int cellIndex, IDomObject cell, bool isHeader = false)
         {
@@ -29,7 +34,7 @@ namespace TableToJson
                 var useGlobal = Options.GlobalTextExtractor != null;
                 var useCell = Options.CellTextExtractor.ContainsKey(cellIndex);
 
-                if(!(useGlobal || useCell)) return null;
+                if (!(useGlobal || useCell)) return null;
 
                 return useGlobal
                     ? Options.GlobalTextExtractor(cellIndex, cellCq)
@@ -44,7 +49,8 @@ namespace TableToJson
 
         private IEnumerable<string> RowValues(CQ row, bool isHeader = false)
         {
-            if (Options.IncludeRowId && row.Attr("id") == null) {
+            if (Options.IncludeRowId && row.Attr("id") == null)
+            {
                 yield return Options.RowIdHeader;
             }
             foreach (var value in row.Children("td,th").Elements
@@ -53,10 +59,10 @@ namespace TableToJson
                 yield return value;
             }
         }
-        
-        private IEnumerable<string> GetHeadings()
+
+        private IEnumerable<string> GetHeadings(IDomObject table)
         {
-            var firstRow = Table.Cq().Find("tr:first").First();
+            var firstRow = table.Cq().Find("tr:first").First();
             if (Options.Headings.Any())
             {
                 return Options.Headings;
@@ -65,14 +71,14 @@ namespace TableToJson
             {
                 return RowValues(firstRow, true);
             }
-            //return Options.Headings.Any() ? 
-            //    Options.Headings : 
+            //return Options.Headings.Any() ?
+            //    Options.Headings :
             //    RowValues(firstRow, true);
         }
 
         private bool IgnoredColumn(int index)
         {
-            if(Options.OnlyColumns.Any()) 
+            if (Options.OnlyColumns.Any())
             {
                 return !Options.OnlyColumns.Contains(index);
             }
@@ -82,11 +88,11 @@ namespace TableToJson
         private IEnumerable<KeyValuePair<string, object>> ArraysToHash(IEnumerable<string> keys, IEnumerable<string> values)
         {
             var index = 0;
-            
-            foreach(var value in values)
+
+            foreach (var value in values)
             {
                 // When ignoring columns, the header option still starts with the first defined column.
-                if (index < keys.Count() && value != null) 
+                if (index < keys.Count() && value != null)
                 {
                     yield return new KeyValuePair<string, object>(keys.ElementAt(index), value);
                     index++;
@@ -104,7 +110,7 @@ namespace TableToJson
 
                 if ((rowCq.Is(":visible") || !Options.IgnoreHiddenRows) &&
                     (!isEmpty || !Options.IgnoreEmptyRows) &&
-                    !Convert.ToBoolean((object) rowCq.Data("ignore")))
+                    !Convert.ToBoolean((object)rowCq.Data("ignore")))
                 {
                     var cellIndex = 0;
                     if (!temp.ContainsKey(rowIndex))
@@ -183,10 +189,10 @@ namespace TableToJson
             return temp;
         }
 
-        private string Construct(IEnumerable<string> headings)
+        private IEnumerable<IDictionary<string, object>> Construct(IEnumerable<string> headings, IDomObject table)
         {
             var temp = new Dictionary<int, Dictionary<int, string>>();
-            Table.Cq().Children("tbody,*").Children("tr").Each((rowIndex, row) =>
+            table.Cq().Children("tbody,*").Children("tr").Each((rowIndex, row) =>
             {
                 temp = ProcessRow(rowIndex, row, temp);
             });
@@ -209,131 +215,21 @@ namespace TableToJson
                 }
             }
 
-            var resultString = "";
-            var serializer = new JavaScriptSerializer();
-            resultString += serializer.Serialize(result);
-            //foreach (var row in result)
-            //{
-            //    resultString += serializer.Serialize(row);
-            //}
-            return resultString;
+            //var resultString = "";
+            //var serializer = new JavaScriptSerializer();
+            //resultString += serializer.Serialize(result);
+            ////foreach (var row in result)
+            ////{
+            ////    resultString += serializer.Serialize(row);
+            ////}
+            //return resultString;
+            return result;
         }
-
 
         public string ToJson()
         {
-            var headings = GetHeadings();
-            return Construct(headings);
+            var serializer = new JavaScriptSerializer();
+            return serializer.Serialize(new { tables = Tables.Select(t => Construct(GetHeadings(t), t)).Select((t, i) => new { index = i, table = t }).ToDictionary(x => "table" + (x.index + 1), x => x.table) });
         }
     }
-    internal sealed class TableOptions
-    {
-        /// <summary>
-        /// Array of column indexes to ignore.
-        /// Type: Array
-        /// Default: []
-        /// </summary>
-        public IEnumerable<int> IgnoreColumns { get; set; }
-
-        /// <summary>
-        /// Array of column indexes to include, all other columns are ignored. This takes presidence over ignoreColumns when provided.
-        /// This takes presidence over ignoreColumns when both are provided.
-        /// Type: Array
-        /// Default: null - all columns
-        /// </summary>
-        public IEnumerable<int> OnlyColumns { get; set; }
-
-        /// <summary>
-        /// Boolean if hidden rows should be ignored or not.
-        /// Type: Boolean
-        /// Default: true
-        /// </summary>
-        public bool IgnoreHiddenRows { get; set; }
-
-        /// <summary>
-        /// Boolean if empty rows should be ignored or not.
-        /// Type: Boolean
-        /// Default: true
-        /// </summary>
-        public bool IgnoreEmptyRows { get; set; }
-
-        /// <summary>
-        /// Array of column headings to use. When supplied, all table rows are treated as values.
-        /// Type: Array
-        /// Default: null
-        /// </summary>
-        public IEnumerable<string> Headings { get; set; }
-
-        /// <summary>
-        /// Boolean if HTML tags in table cells should be preserved.
-        /// Type: Boolean
-        /// Default: false
-        /// </summary>
-        public bool AllowHtml { get; set; }
-
-        /// <summary>
-        /// Determines if the id attribute of each &lt;tr&gt; element is included in the JSON.
-        /// Type: Boolean
-        /// Default: false
-        /// </summary>
-        public bool IncludeRowId { get; set; }
-
-        /// <summary>
-        /// The header for the id attribute. Only used if includeRowId is true.
-        /// Type: String
-        /// Default: rowId
-        /// </summary>
-        public string RowIdHeader { get; set; }
-
-        /// <summary>
-        /// The cell attribute name which contains the text data override value.
-        /// If this attribute exists, the value of this attribute it used instead of the cell's actual value.
-        /// Type: String
-        /// Default: data-override
-        /// </summary>
-        public string TextDataOverride { get; set; }
-
-        /// <summary>
-        /// A function to process a cell's value.
-        /// If the cell's data override exists, then that value is used as the cell's value.
-        /// If the global extractor is null, then the cell extractor is used.
-        /// If the cell extractor doesn't exist for the cell index, then the normal value of the cell is used. 
-        /// Type: Function
-        /// Default: null
-        /// </summary>
-        public Extractor GlobalTextExtractor { get; set; }
-
-        /// <summary>
-        /// A function to process a cell's value.
-        /// If the cell's data override exists, then that value is used as the cell's value.
-        /// If the global extractor is null, then the cell extractor is used.
-        /// If the cell extractor doesn't exist for the cell index, then the normal value of the cell is used. 
-        /// Type: Function
-        /// Default: null
-        /// </summary>
-        public IDictionary<int, Extractor> CellTextExtractor { get; set; }
-
-        public TableOptions()
-        {
-            IgnoreColumns = new List<int>();
-            OnlyColumns = new List<int>();
-            IgnoreHiddenRows = true;
-            IgnoreEmptyRows = false;
-            Headings = new List<string>();
-            AllowHtml = false;
-            IncludeRowId = false;
-            RowIdHeader = "rowId";
-            TextDataOverride = "data-override";
-            GlobalTextExtractor = null;
-            CellTextExtractor = new Dictionary<int, Extractor>();
-        }
-    }
-
-    /// <summary>
-    /// A method for extracting a cell's value instead of using the value of the cell directly.
-    /// </summary>
-    /// <param name="cellIndex">The index of the cell in row.</param>
-    /// <param name="cellCq">The CQ of the cell.</param>
-    /// <returns>The value of the cell as determined by the extractor.</returns>
-    public delegate string Extractor(int cellIndex, CQ cellCq);
 }

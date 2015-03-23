@@ -74,11 +74,16 @@
     <Compile Include="HtmlTableToJsonTests.cs">
       <DependentUpon>HtmlTableToJson.cs</DependentUpon>
     </Compile>
+    <Compile Include="Extractor.cs" />
     <Compile Include="List.cs" />
     <Compile Include="ListTests.cs">
       <DependentUpon>List.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TableOptions.cs" />
+    <Compile Include="TableOptionsTests.cs">
+      <DependentUpon>TableOptions.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="jquery.tabletojson.js" />
