@@ -108,63 +108,68 @@ namespace TableToJson
             return Convert.ToInt32(cq.Attr(span), 10) - 1;
         }
 
-        private static void FlattenColSpans(CQ rowCq)
+        private static void FlattenSpans(CQ rowCq, string span, Action<int, int, CQ> process)
         {
-            //foreach (var cellCq in rowCq.Children().Select(c => c.Cq()).Where(cq => cq.Filter("colspan").Length > 0))
-            //rowCq.Children().Filter(c => c.Cq().Filter("colspan").Length > 0).Each(cell =>
-            //{
-            //    var cellCq = cell.Cq();
-            //    var length = Convert.ToInt32(cellCq.Attr("colspan"), 10) - 1;
-            //    cellCq.RemoveAttr("colspan");
-            //    foreach (var i in Enumerable.Range(0, length))
-            //    {
-            //        cellCq.After(CQ.Create(cellCq));
-            //    }
-            //});
-            rowCq.Children().Each(cell =>
+            rowCq.Children().Each((columnIndex, cell) =>
             {
-                const string span = "colspan";
                 var cellCq = cell.Cq();
                 if (cellCq.Attr(span) == null) return;
 
                 var count = SpanAdditionalCount(cellCq, span);
                 cellCq.RemoveAttr(span);
-                for (var i = 0; i < count; ++i) { cellCq.After(CQ.Create(cellCq)); }
+
+                process(count, columnIndex, cellCq);
             });
+        }
+
+        private static void FlattenColSpans(CQ rowCq)
+        {
+            FlattenSpans(rowCq, "colspan", (c, ci, cc) =>
+            {
+                for (var i = 0; i < c; ++i)
+                {
+                    cc.After(CQ.Create(cc));
+                }
+            });
+            //rowCq.Children().Each(cell =>
+            //{
+            //    const string span = "colspan";
+            //    var cellCq = cell.Cq();
+            //    if (cellCq.Attr(span) == null) return;
+
+            //    var count = SpanAdditionalCount(cellCq, span);
+            //    cellCq.RemoveAttr(span);
+            //    for (var i = 0; i < count; ++i) { cellCq.After(CQ.Create(cellCq)); }
+            //});
         }
 
         private static void FlattenRowSpans(CQ rowCq)
         {
-            //foreach (var cellCq in rowCq.Children().Select(c => c.Cq()).Where(cq => cq.Filter("rowspan").Length > 0))
-            //rowCq.Children().Filter(c => c.Cq().Filter("rowspan").Length > 0).Each(cell =>
-            //{
-            //    var cellCq = cell.Cq();
-            //    var length = Convert.ToInt32(cellCq.Attr("rowspan"), 10) - 1;
-            //    cellCq.RemoveAttr("rowspan");
-
-            //    var currentRow = rowCq;
-            //    foreach (var i in Enumerable.Range(0, length))
-            //    {
-            //        currentRow = currentRow.Next("tr");
-            //        currentRow.Children().Eq(cellIndex - 1).After(CQ.Create(cellCq));
-            //    }
-            //});
-            rowCq.Children().Each((index, cell) =>
+            FlattenSpans(rowCq, "rowspan", (c, ci, cc) =>
             {
-                const string span = "rowspan";
-                var cellCq = cell.Cq();
-                if (cellCq.Attr(span) == null) return;
-
-                var count = SpanAdditionalCount(cellCq, span);
-                cellCq.RemoveAttr(span);
-
                 var currentRow = rowCq;
-                for (var i = 0; i < count; ++i)
+                for (var i = 0; i < c; ++i)
                 {
                     currentRow = currentRow.Next("tr");
-                    InsertAtIndex(currentRow, index, CQ.Create(cellCq));
+                    InsertAtIndex(currentRow, ci, CQ.Create(cc));
                 }
             });
+            //rowCq.Children().Each((index, cell) =>
+            //{
+            //    const string span = "rowspan";
+            //    var cellCq = cell.Cq();
+            //    if (cellCq.Attr(span) == null) return;
+
+            //    var count = SpanAdditionalCount(cellCq, span);
+            //    cellCq.RemoveAttr(span);
+
+            //    var currentRow = rowCq;
+            //    for (var i = 0; i < count; ++i)
+            //    {
+            //        currentRow = currentRow.Next("tr");
+            //        InsertAtIndex(currentRow, index, CQ.Create(cellCq));
+            //    }
+            //});
         }
 
         private Dictionary<int, IDictionary<int, string>> ProcessRow(int rowIndex, CQ rowCq, Dictionary<int, IDictionary<int, string>> temp)

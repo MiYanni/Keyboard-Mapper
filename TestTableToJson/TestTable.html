@@ -1,60 +1,67 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Test Page</title>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
+    <head>
+        <title>Test Page</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
 
-        th, td {
-            padding: 5px;
-        }
-    </style>
-</head>
-<body>
-    <table style="width: 100%">
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Points</th>
-        </tr>
-        <tr>
-            <td rowspan="2">Jill</td>
-            <!--<td>Jill</td>-->
-            <td>Smith</td>
-            <td rowspan="3">50</td>
-        </tr>
-        <tr>
-            <!--<td>Eve</td>-->
-            <td>Jackson</td>
-            <!--<td rowspan="2">94</td>-->
-        </tr>
-        <tr>
-            <td>John</td>
-            <td>Doe</td>
-        </tr>
-    </table>
-    <table style="width: 100%">
-        <tr>
-            <th>Fruit</th>
-            <th>Color</th>
-        </tr>
-        <tr>
-            <td colspan="2">Orange</td>
-        </tr>
-        <tr>
-            <td>Banana</td>
-            <td>Yellow</td>
-        </tr>
-        <tr>
-            <td>Grape</td>
-        </tr>
-        <tr>
-            <td>Kiwi</td>
-            <td></td>
-        </tr>
-    </table>
-</body>
+            th, td { padding: 5px; }
+
+            .auto-style1 { height: 32px; }
+        </style>
+    </head>
+    <body>
+        <table style="width: 100%">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Points</th>
+            </tr>
+            <tr>
+                <td rowspan="2">Jill</td>
+                <!--<td>Jill</td>-->
+                <td>Smith</td>
+                <td rowspan="3">50</td>
+            </tr>
+            <tr>
+                <!--<td>Eve</td>-->
+                <td>Jackson</td>
+                <!--<td rowspan="2">94</td>-->
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="2">Jimmy</td>
+                <td>1337</td>
+            </tr>
+            <tr>
+                <td>666</td>
+            </tr>
+        </table>
+        <table style="width: 100%">
+            <tr>
+                <th>Fruit</th>
+                <th>Color</th>
+            </tr>
+            <tr>
+                <td colspan="2">Orange</td>
+            </tr>
+            <tr>
+                <td>Banana</td>
+                <td>Yellow</td>
+            </tr>
+            <tr>
+                <td>Grape</td>
+            </tr>
+            <tr>
+                <td>Kiwi</td>
+                <td></td>
+            </tr>
+        </table>
+    </body>
 </html>
