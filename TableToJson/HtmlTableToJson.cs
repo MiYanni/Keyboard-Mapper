@@ -122,7 +122,7 @@ namespace TableToJson
             });
         }
 
-        private static void FlattenColSpans(CQ rowCq)
+        private static void FlattenAllSpans(CQ rowCq)
         {
             FlattenSpans(rowCq, "colspan", (c, ci, cc) =>
             {
@@ -131,20 +131,7 @@ namespace TableToJson
                     cc.After(CQ.Create(cc));
                 }
             });
-            //rowCq.Children().Each(cell =>
-            //{
-            //    const string span = "colspan";
-            //    var cellCq = cell.Cq();
-            //    if (cellCq.Attr(span) == null) return;
 
-            //    var count = SpanAdditionalCount(cellCq, span);
-            //    cellCq.RemoveAttr(span);
-            //    for (var i = 0; i < count; ++i) { cellCq.After(CQ.Create(cellCq)); }
-            //});
-        }
-
-        private static void FlattenRowSpans(CQ rowCq)
-        {
             FlattenSpans(rowCq, "rowspan", (c, ci, cc) =>
             {
                 var currentRow = rowCq;
@@ -154,166 +141,28 @@ namespace TableToJson
                     InsertAtIndex(currentRow, ci, CQ.Create(cc));
                 }
             });
-            //rowCq.Children().Each((index, cell) =>
-            //{
-            //    const string span = "rowspan";
-            //    var cellCq = cell.Cq();
-            //    if (cellCq.Attr(span) == null) return;
-
-            //    var count = SpanAdditionalCount(cellCq, span);
-            //    cellCq.RemoveAttr(span);
-
-            //    var currentRow = rowCq;
-            //    for (var i = 0; i < count; ++i)
-            //    {
-            //        currentRow = currentRow.Next("tr");
-            //        InsertAtIndex(currentRow, index, CQ.Create(cellCq));
-            //    }
-            //});
         }
 
-        private Dictionary<int, IDictionary<int, string>> ProcessRow(int rowIndex, CQ rowCq, Dictionary<int, IDictionary<int, string>> temp)
+        private Dictionary<int, string> ProcessRow(CQ rowCq)
         {
-            var cellIndex = 0;
-            if (!temp.ContainsKey(rowIndex))
-            {
-                temp[rowIndex] = new Dictionary<int, string>();
-            }
+            var result = new Dictionary<int, string>();
+            var indexShift = 0;
             if (Options.IncludeRowId)
             {
-                cellIndex++;
-                temp[rowIndex][cellIndex] = rowCq.Attr("id") ?? String.Empty;
+                result[0] = rowCq.Attr("id") ?? String.Empty;
+                indexShift++;
             }
-            //Console.WriteLine(rowCq.Html());
-            //FlattenColSpans(rowCq);
-            //FlattenRowSpans(rowCq, cellIndex);
-            //Console.WriteLine(rowCq.Html());
-            //rowCq.Children().Elements.Select(c => c.Cq()).Where(cq => cq.Filter("colspan").Length > 0).ForEach(cellCq =>
-            //{
-            //    var length = Convert.ToInt32(cellCq.Attr("colspan"), 10) - 1;
-            //    cellCq.RemoveAttr("colspan");
-            //    Enumerable.Range(0, length).ForEach(i => cellCq.After(CQ.Create(cellCq)));
-            //});
 
-            //rowCq.Children().Elements.Select(c => c.Cq()).Where(cq => cq.Filter("rowspan").Length > 0).ForEach(cellCq =>
-            //{
-            //    var length = Convert.ToInt32(cellCq.Attr("rowspan"), 10) - 1;
-            //    cellCq.RemoveAttr("rowspan");
-
-            //    var currentRow = rowCq;
-            //    Enumerable.Range(0, length).ForEach(i =>
-            //    {
-            //        currentRow = currentRow.Next("tr");
-            //        currentRow.Children().Eq(cellIndex - 1).After(CQ.Create(cellCq));
-            //    });
-            //});
-
-            Console.WriteLine(rowCq.Html());
-            FlattenColSpans(rowCq);
-            Console.WriteLine(rowCq.Html());
-            FlattenRowSpans(rowCq);
-            //Console.WriteLine(rowCq.Html());
-            //var cellIndex2 = cellIndex;
-            //rowCq.Children().Each(cell =>
-            //{
-            //    var cellCq = cell.Cq();
-            //    if (cellCq.Filter("[rowspan]").Length > 0)
-            //    {
-            //        var length = Convert.ToInt32(cellCq.Attr("rowspan"), 10) - 1;
-            //        cellCq.RemoveAttr("rowspan");
-
-            //        var currentRow = rowCq;
-            //        foreach (var i in Enumerable.Range(0, length))
-            //        {
-            //            currentRow = currentRow.Next("tr");
-            //            currentRow.Children().Eq(cellIndex2 - 1).After(CQ.Create(cellCq));
-            //        }
-            //    }
-            //    cellIndex2++;
-            //});
-            Console.WriteLine(rowCq.Html());
-
-            rowCq.Children().Each(cell =>
+            rowCq.Children().Each((index, cell) =>
             {
-                //var cellCq = cell.Cq();
-                //if (cellCq.Filter("[rowspan]").Length > 0)
-                //{
-                //    var length = Convert.ToInt32(cellCq.Attr("rowspan"), 10) - 1;
-                //    cellCq.RemoveAttr("rowspan");
-
-                //    var currentRow = rowCq;
-                //    foreach (var i in Enumerable.Range(0, length))
-                //    {
-                //        currentRow = currentRow.Next("tr");
-                //        currentRow.Children().Eq(cellIndex - 1).After(CQ.Create(cellCq));
-                //    }
-                //}
-
-                //if (cellCq.Filter("[colspan]").Length > 0)
-                //{
-                //    var length = Convert.ToInt32(cellCq.Attr("colspan"), 10) - 1;
-                //    cellCq.RemoveAttr("colspan");
-
-                //    var currentColumn = cellCq;
-                //    foreach (var i in Enumerable.Range(0, length))
-                //    {
-                //        currentColumn.After(CQ.Create(cell));
-                //    }
-                //}
-
-                // Process rowspans
-                //if (cellCq.Filter("[rowspan]").Length > 0)
-                //{
-                //    var length = Convert.ToInt32(cellCq.Attr("rowspan"), 10) - 1;
-                //    var text = CellValues(cellIndex, cell);
-                //    for (var i = 1; i <= length; i++)
-                //    {
-                //        if (!temp.ContainsKey(rowIndex + 1))
-                //        {
-                //            temp[rowIndex + i] = new Dictionary<int, string>();
-                //        }
-                //        temp[rowIndex + i][cellIndex] = text;
-                //    }
-                //}
-
-                // Process colspans
-                //if (cellCq.Filter("[colspan]").Length > 0)
-                //{
-                //    var length = Convert.ToInt32(cellCq.Attr("colspan"), 10) - 1;
-                //    var text = CellValues(cellIndex, cell);
-                //    for (var i = 1; i <= length; i++)
-                //    {
-                //        // Cell has both col and row spans.
-                //        if (cellCq.Filter("[rowspan]").Length > 0)
-                //        {
-                //            var length2 = Convert.ToInt32(cellCq.Attr("rowspan"), 10);
-                //            for (var j = 0; j < length2; j++)
-                //            {
-                //                temp[rowIndex + j][cellIndex + i] = text;
-                //            }
-                //        }
-                //        else
-                //        {
-                //            temp[rowIndex][cellIndex + i] = text;
-                //        }
-                //    }
-                //}
-
-                // Skip column if already defined.
-                //while (temp[rowIndex].ContainsKey(cellIndex) && temp[rowIndex][cellIndex] != null)
-                //{
-                //    cellIndex++;
-                //}
-
-                var value = (temp[rowIndex].ContainsKey(cellIndex) ? temp[rowIndex][cellIndex] : null) ?? CellValues(cellIndex, cell);
+                var adjustedIndex = index + indexShift;
+                var value = CellValues(adjustedIndex, cell);
                 if (value != null)
                 {
-                    temp[rowIndex][cellIndex] = value;
+                    result[adjustedIndex] = value;
                 }
-                cellIndex++;
             });
-            //Console.WriteLine(rowCq.Html());
-            return temp;
+            return result;
         }
 
         private bool IsValidRow(CQ rowCq, int rowIndex)
@@ -330,14 +179,16 @@ namespace TableToJson
             var temp = new Dictionary<int, IDictionary<int, string>>();
             Console.WriteLine(table.Cq().Html());
             table.Cq().Children("tbody,*").Children("tr").Elements
-            .Select(row => row.Cq())
-            .Where(IsValidRow)
-            .ForEach((rowCq, rowIndex) =>
-            {
-                temp = ProcessRow(rowIndex, rowCq, temp);
-            });
+                .Select(row => row.Cq())
+                .Where(IsValidRow)
+                .ForEach((rowCq, rowIndex) =>
+                {
+                    FlattenAllSpans(rowCq);
+                    temp[rowIndex] = ProcessRow(rowCq);
+                });
             Console.WriteLine(table.Cq().Html());
             temp.ForEach(a => a.Value.ForEach(b => Console.WriteLine(b.Key + " " + b.Value)));
+
             var result = new List<IDictionary<string, object>>();
             foreach (var row in temp.OrderBy(r => r.Key).Select(r => r.Value.ToDictionary(x => x.Key, x => x.Value)))
             {
