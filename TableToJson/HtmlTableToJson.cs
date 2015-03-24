@@ -80,17 +80,11 @@ namespace TableToJson
 
         private IEnumerable<KeyValuePair<string, object>> ArraysToHash(IEnumerable<string> keys, IEnumerable<string> values)
         {
-            var index = 0;
-
-            foreach (var value in values)
-            {
-                // When ignoring columns, the header option still starts with the first defined column.
-                if (index < keys.Count() && value != null)
-                {
-                    yield return new KeyValuePair<string, object>(keys.ElementAt(index), value);
-                    index++;
-                }
-            }
+            var keysList = keys.ToList();
+            return values.Where(v => v != null)
+                .Select((v, i) => new { Index = i, Value = v })
+                .Where(vi => vi.Index < keysList.Count)
+                .ToDictionary(pair => keysList.ElementAt(pair.Index), pair => (object)pair.Value);
         }
 
         private static void InsertAtIndex(CQ collection, int index, IEnumerable<IDomObject> newElement)
