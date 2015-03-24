@@ -93,6 +93,39 @@ namespace TableToJson
             }
         }
 
+        private void FlattenColSpans(CQ rowCq)
+        {
+            //foreach (var cellCq in rowCq.Children().Select(c => c.Cq()).Where(cq => cq.Filter("colspan").Length > 0))
+            rowCq.Children().Filter(c => c.Cq().Filter("colspan").Length > 0).Each(cell =>
+            {
+                var cellCq = cell.Cq();
+                var length = Convert.ToInt32(cellCq.Attr("colspan"), 10) - 1;
+                cellCq.RemoveAttr("colspan");
+                foreach (var i in Enumerable.Range(0, length))
+                {
+                    cellCq.After(CQ.Create(cellCq));
+                }
+            });
+        }
+
+        private void FlattenRowSpans(CQ rowCq, int cellIndex)
+        {
+            //foreach (var cellCq in rowCq.Children().Select(c => c.Cq()).Where(cq => cq.Filter("rowspan").Length > 0))
+            rowCq.Children().Filter(c => c.Cq().Filter("rowspan").Length > 0).Each(cell =>
+            {
+                var cellCq = cell.Cq();
+                var length = Convert.ToInt32(cellCq.Attr("rowspan"), 10) - 1;
+                cellCq.RemoveAttr("rowspan");
+
+                var currentRow = rowCq;
+                foreach (var i in Enumerable.Range(0, length))
+                {
+                    currentRow = currentRow.Next("tr");
+                    currentRow.Children().Eq(cellIndex - 1).After(CQ.Create(cellCq));
+                }
+            });
+        }
+
         private Dictionary<int, IDictionary<int, string>> ProcessRow(int rowIndex, CQ rowCq, Dictionary<int, IDictionary<int, string>> temp)
         {
             var cellIndex = 0;
@@ -105,7 +138,49 @@ namespace TableToJson
                 cellIndex++;
                 temp[rowIndex][cellIndex] = rowCq.Attr("id") ?? String.Empty;
             }
+            //Console.WriteLine(rowCq.Html());
+            //FlattenColSpans(rowCq);
+            //FlattenRowSpans(rowCq, cellIndex);
+            //Console.WriteLine(rowCq.Html());
+            //rowCq.Children().Elements.Select(c => c.Cq()).Where(cq => cq.Filter("colspan").Length > 0).ForEach(cellCq =>
+            //{
+            //    var length = Convert.ToInt32(cellCq.Attr("colspan"), 10) - 1;
+            //    cellCq.RemoveAttr("colspan");
+            //    Enumerable.Range(0, length).ForEach(i => cellCq.After(CQ.Create(cellCq)));
+            //});
 
+            //rowCq.Children().Elements.Select(c => c.Cq()).Where(cq => cq.Filter("rowspan").Length > 0).ForEach(cellCq =>
+            //{
+            //    var length = Convert.ToInt32(cellCq.Attr("rowspan"), 10) - 1;
+            //    cellCq.RemoveAttr("rowspan");
+
+            //    var currentRow = rowCq;
+            //    Enumerable.Range(0, length).ForEach(i =>
+            //    {
+            //        currentRow = currentRow.Next("tr");
+            //        currentRow.Children().Eq(cellIndex - 1).After(CQ.Create(cellCq));
+            //    });
+            //});
+
+            Console.WriteLine(rowCq.Html());
+            rowCq.Children().Each(cell =>
+            {
+                var cellCq = cell.Cq();
+                if (cellCq.Filter("[colspan]").Length <= 0) return;
+
+                var length = Convert.ToInt32(cellCq.Attr("colspan"), 10) - 1;
+                cellCq.RemoveAttr("colspan");
+
+                var currentColumn = cellCq;
+                foreach (var i in Enumerable.Range(0, length))
+                {
+                    currentColumn.After(CQ.Create(cellCq));
+                }
+            });
+            Console.WriteLine(rowCq.Html());
+
+            //Console.WriteLine(rowCq.Html());
+            var cellIndex2 = cellIndex;
             rowCq.Children().Each(cell =>
             {
                 var cellCq = cell.Cq();
@@ -118,9 +193,40 @@ namespace TableToJson
                     foreach (var i in Enumerable.Range(0, length))
                     {
                         currentRow = currentRow.Next("tr");
-                        currentRow.Children().Eq(cellIndex - 1).After(cell);
+                        currentRow.Children().Eq(cellIndex2 - 1).After(CQ.Create(cellCq));
                     }
                 }
+                cellIndex2++;
+            });
+            Console.WriteLine(rowCq.Html());
+
+            rowCq.Children().Each(cell =>
+            {
+                //var cellCq = cell.Cq();
+                //if (cellCq.Filter("[rowspan]").Length > 0)
+                //{
+                //    var length = Convert.ToInt32(cellCq.Attr("rowspan"), 10) - 1;
+                //    cellCq.RemoveAttr("rowspan");
+
+                //    var currentRow = rowCq;
+                //    foreach (var i in Enumerable.Range(0, length))
+                //    {
+                //        currentRow = currentRow.Next("tr");
+                //        currentRow.Children().Eq(cellIndex - 1).After(CQ.Create(cellCq));
+                //    }
+                //}
+
+                //if (cellCq.Filter("[colspan]").Length > 0)
+                //{
+                //    var length = Convert.ToInt32(cellCq.Attr("colspan"), 10) - 1;
+                //    cellCq.RemoveAttr("colspan");
+
+                //    var currentColumn = cellCq;
+                //    foreach (var i in Enumerable.Range(0, length))
+                //    {
+                //        currentColumn.After(CQ.Create(cell));
+                //    }
+                //}
 
                 // Process rowspans
                 //if (cellCq.Filter("[rowspan]").Length > 0)
@@ -137,7 +243,7 @@ namespace TableToJson
                 //    }
                 //}
 
-                //// Process colspans
+                // Process colspans
                 //if (cellCq.Filter("[colspan]").Length > 0)
                 //{
                 //    var length = Convert.ToInt32(cellCq.Attr("colspan"), 10) - 1;
@@ -173,6 +279,7 @@ namespace TableToJson
                 }
                 cellIndex++;
             });
+            //Console.WriteLine(rowCq.Html());
             return temp;
         }
 
@@ -188,6 +295,7 @@ namespace TableToJson
         private IEnumerable<IDictionary<string, object>> Construct(IEnumerable<string> headings, IDomObject table)
         {
             var temp = new Dictionary<int, IDictionary<int, string>>();
+            Console.WriteLine(table.Cq().Html());
             table.Cq().Children("tbody,*").Children("tr").Elements
             .Select(row => row.Cq())
             .Where(IsValidRow)
@@ -195,7 +303,8 @@ namespace TableToJson
             {
                 temp = ProcessRow(rowIndex, rowCq, temp);
             });
-
+            Console.WriteLine(table.Cq().Html());
+            temp.ForEach(a => a.Value.ForEach(b => Console.WriteLine(b.Key + " " + b.Value)));
             var result = new List<IDictionary<string, object>>();
             foreach (var row in temp.OrderBy(r => r.Key).Select(r => r.Value.ToDictionary(x => x.Key, x => x.Value)))
             {
