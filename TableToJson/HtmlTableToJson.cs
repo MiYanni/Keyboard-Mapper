@@ -110,16 +110,16 @@ namespace TableToJson
 
         private static void FlattenSpans(CQ rowCq, string span, Action<int, int, CQ> process)
         {
-            rowCq.Children().Each((columnIndex, cell) =>
-            {
-                var cellCq = cell.Cq();
-                if (cellCq.Attr(span) == null) return;
+            rowCq.Children().Elements
+                .Select((c, ci) => new { CellCq = c.Cq(), ColumnIndex = ci })
+                .Where(cc => cc.CellCq.Attr(span) != null)
+                .ForEach(cc =>
+                {
+                    var count = SpanAdditionalCount(cc.CellCq, span);
+                    cc.CellCq.RemoveAttr(span);
 
-                var count = SpanAdditionalCount(cellCq, span);
-                cellCq.RemoveAttr(span);
-
-                process(count, columnIndex, cellCq);
-            });
+                    process(count, cc.ColumnIndex, cc.CellCq);
+                });
         }
 
         private static void FlattenAllSpans(CQ rowCq)
