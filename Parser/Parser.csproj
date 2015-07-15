@@ -59,6 +59,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,6 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Valve\Commands\JsonCommand.cs" />
+    <Compile Include="Valve\Commands\JsonCommandTests.cs">
+      <DependentUpon>JsonCommand.cs</DependentUpon>
+    </Compile>
     <Compile Include="Valve\Commands\Command.cs" />
     <Compile Include="Valve\Commands\CommandTests.cs">
       <DependentUpon>Command.cs</DependentUpon>
@@ -75,6 +80,7 @@
     <Compile Include="Valve\Commands\FactoryTests.cs">
       <DependentUpon>Factory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Valve\Commands\JsonFile.cs" />
     <Compile Include="Valve\Commands\Types\Basic.cs" />
     <Compile Include="Valve\Commands\Types\BasicTests.cs">
       <DependentUpon>Basic.cs</DependentUpon>

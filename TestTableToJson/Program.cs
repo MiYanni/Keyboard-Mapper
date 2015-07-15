@@ -22,9 +22,9 @@ namespace TestTableToJson
         private static void CreateValveConsoleCommandList()
         {
             var test = new Tables(@"https://developer.valvesoftware.com/wiki/Console_Command_List");
-            var json = test.ToJson();
+            var json = test.ToJsonUngrouped();
             Console.WriteLine(json);
-            File.WriteAllText(new DirectoryInfo(@"TestTable.json").ToString(), json);
+            File.WriteAllText(new DirectoryInfo(@"ValveConsoleCommands.json").ToString(), json);
             Console.WriteLine("Press any key to exit.");
             Console.ReadLine();
         }

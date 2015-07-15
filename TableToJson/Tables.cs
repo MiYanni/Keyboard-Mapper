@@ -19,6 +19,8 @@ namespace TableToJson
 
         private readonly TablesType _tables;
 
+        private readonly JavaScriptSerializer _serializer = new JavaScriptSerializer();
+
         public Tables(string url)
             : this(CQ.CreateFromUrl(url))
         {
@@ -42,37 +44,34 @@ namespace TableToJson
             _tables = converter.Generate();
         }
 
-        public string ToJson()
+        public string ToJsonUngrouped()
         {
-            var serializer = new JavaScriptSerializer();
-            //return serializer.Serialize(new
-            //{
-            //    tables = _tables.Select((t, i) => new { index = i, table = t }).ToDictionary(x => "table" + (x.index + 1), x => x.table)
-            //});
-
-            // TEMPORARY FOR VALVE
-            var tableTitles = _dom["table"].Siblings("h2").Select(h => h.Cq().Text()).ToList();
-            tableTitles.RemoveAt(0);
-
-            return serializer.Serialize(new
+            return _serializer.Serialize(new
             {
-                tables = _tables.Zip(tableTitles, (t, tt) => new {Title = tt, Table = t}).ToDictionary(x => x.Title, x => x.Table)
+                table = _tables.SelectMany(t => t.ToList())
             });
         }
 
-        //public string Create()
-        //{
-        //    //var dom = CQ.CreateFromUrl(Url);
-        //    //var dom = CQ.CreateDocumentFromFile(@"..\TableToJson\TestTable.html");
-        //    //var tables = _dom["table"];
-        //    //var result = String.Empty;
-        //    //tables.Each(table =>
-        //    //{
-        //    //    var converter = new HtmlTableToJson(table);
-        //    //    result += converter.ToJson();
-        //    //});
-        //    return "";
-        //}
+        public string ToJsonGrouped()
+        {
+            return _serializer.Serialize(new
+            {
+                tables = _tables.Select((t, i) => new { index = i, table = t }).ToDictionary(x => "table" + (x.index + 1), x => x.table)
+            });
+        }
+
+        // Was simply used for a proof of concept for the Valve commands.
+        private string ToJsonGroupedValve()
+        {
+            var tableTitles = _dom["table"].Siblings("h2").Select(h => h.Cq().Text()).ToList();
+            tableTitles.RemoveAt(0);
+
+            var serializer = new JavaScriptSerializer();
+            return serializer.Serialize(new
+            {
+                tables = _tables.Zip(tableTitles, (t, tt) => new { Title = tt, Table = t }).ToDictionary(x => x.Title, x => x.Table)
+            });
+        }
 
         public IEnumerator<TableType> GetEnumerator()
         {

@@ -171,7 +171,7 @@ namespace TableToJson
         private IEnumerable<IDictionary<string, object>> Construct(IEnumerable<string> headings, IDomObject table)
         {
             var temp = new Dictionary<int, IDictionary<int, string>>();
-            Console.WriteLine(table.Cq().Html());
+            //Console.WriteLine(table.Cq().Html());
             table.Cq().Children("tbody,*").Children("tr").Elements
                 .Select(row => row.Cq())
                 .Where(IsValidRow)
@@ -180,8 +180,8 @@ namespace TableToJson
                     FlattenAllSpans(rowCq);
                     temp[rowIndex] = ProcessRow(rowCq);
                 });
-            Console.WriteLine(table.Cq().Html());
-            temp.ForEach(a => a.Value.ForEach(b => Console.WriteLine(b.Key + " " + b.Value)));
+            //Console.WriteLine(table.Cq().Html());
+            //temp.ForEach(a => a.Value.ForEach(b => Console.WriteLine(b.Key + " " + b.Value)));
 
             var result = new List<IDictionary<string, object>>();
             foreach (var row in temp.OrderBy(r => r.Key).Select(r => r.Value.ToDictionary(x => x.Key, x => x.Value)))

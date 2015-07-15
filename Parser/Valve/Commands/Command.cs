@@ -1,17 +1,19 @@
+using System.Runtime.Serialization;
+
 namespace Parser.Valve.Commands
 {
     public abstract class Command
     {
-        //public string Name { get; private set; }
+        //[DataMember(Name = "Command")]
+        //public string Name { get; set; }
 
-        //public string HelpText { get; private set; }
+        //[DataMember(Name = "Default")]
+        //public string Default { get; set; }
 
-        //public bool IsCheat { get; private set; }
+        //[DataMember(Name = "Cheat?")]
+        //public string IsCheat { get; set; }
 
-        //protected Command(string name, string helpText)
-        //{
-        //    Name = name;
-        //    HelpText = helpText;
-        //}
+        //[DataMember(Name = "Help Text")]
+        //public string HelpText { get; set; }
     }
 }
