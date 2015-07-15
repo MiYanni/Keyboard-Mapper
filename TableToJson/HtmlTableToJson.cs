@@ -200,10 +200,9 @@ namespace TableToJson
             return result;
         }
 
-        public string ToJson()
+        public IEnumerable<IEnumerable<IDictionary<string, object>>> Generate()
         {
-            var serializer = new JavaScriptSerializer();
-            return serializer.Serialize(new { tables = Tables.Select(t => Construct(GetHeadings(t), t)).Select((t, i) => new { index = i, table = t }).ToDictionary(x => "table" + (x.index + 1), x => x.table) });
+            return Tables.Select(t => Construct(GetHeadings(t), t));
         }
     }
 }

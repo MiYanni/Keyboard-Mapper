@@ -97,12 +97,7 @@ namespace TableToJson
             IncludeRowId = false;
             RowIdHeader = "rowId";
             TextDataOverride = "data-override";
-            GlobalTextExtractor = (i, c) =>
-            {
-                //c.Children("p,pre,a").Contents().Unwrap();
-                // http://api.jquery.com/text/
-                return c.Text();
-            };
+            GlobalTextExtractor = null;
             CellTextExtractor = new Dictionary<int, Extractor>();
         }
     }
