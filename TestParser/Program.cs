@@ -43,11 +43,12 @@ namespace TestParser
             commandGroups.ForEach(cg =>
             {
                 Console.WriteLine(cg.First().GetType().Name + ": " + cg.Count());
-                if (cg.First().GetType().Name == "Special")
-                {
-                    cg.ToList().ForEach(Console.WriteLine);
-                }
+                //if (cg.First().GetType().Name == "Toggle")
+                //{
+                //    cg.ToList().ForEach(Console.WriteLine);
+                //}
             });
+            Console.WriteLine("Cheats: " + commandGroups.SelectMany(c => c).Count(c => c.IsCheat));
 
             Console.WriteLine("Press any key to exit.");
             Console.ReadLine();

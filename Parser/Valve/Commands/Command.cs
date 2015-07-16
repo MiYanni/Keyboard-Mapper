@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.Serialization;
 using Common.Extensions;
 
@@ -19,15 +20,25 @@ namespace Parser.Valve.Commands
 
         protected JsonCommand TextCommand { get; set; }
 
-        protected Command(JsonCommand textCommand)
+        public string Name { get; private set; }
+
+        public string Description { get; private set; }
+
+        public bool IsCheat { get; private set; }
+
+        private const string CheatIndicator = "Yes";
+
+        protected Command(JsonCommand textCommand, string name = null)
         {
             TextCommand = textCommand;
+            Name = name ?? textCommand.Name;
+            Description = textCommand.HelpText;
+            IsCheat = String.Equals(textCommand.IsCheat, CheatIndicator, StringComparison.InvariantCultureIgnoreCase);
         }
 
         public override string ToString()
         {
-            return "Class: " + GetType().Name + ", " + 
-                TextCommand.ToReflectedString(hasClassName: false);
+            return this.ToReflectedString();
         }
     }
 }
