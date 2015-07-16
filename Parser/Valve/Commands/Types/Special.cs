@@ -5,7 +5,12 @@ using System.Text;
 
 namespace Parser.Valve.Commands.Types
 {
-    class Special
+    public class Special : Command
     {
+        public Special(JsonCommand textCommand)
+            : base(textCommand)
+        {
+            
+        }
     }
 }

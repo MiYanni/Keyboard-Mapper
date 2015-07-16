@@ -5,7 +5,12 @@ using System.Text;
 
 namespace Parser.Valve.Commands.Types
 {
-    class Toggle
+    public class Toggle : Command
     {
+        public Toggle(JsonCommand textCommand)
+            : base(textCommand)
+        {
+            
+        }
     }
 }

@@ -1,4 +1,5 @@
 using System.Runtime.Serialization;
+using Common.Extensions;
 
 namespace Parser.Valve.Commands
 {
@@ -15,5 +16,18 @@ namespace Parser.Valve.Commands
 
         //[DataMember(Name = "Help Text")]
         //public string HelpText { get; set; }
+
+        protected JsonCommand TextCommand { get; set; }
+
+        protected Command(JsonCommand textCommand)
+        {
+            TextCommand = textCommand;
+        }
+
+        public override string ToString()
+        {
+            return "Class: " + GetType().Name + ", " + 
+                TextCommand.ToReflectedString(hasClassName: false);
+        }
     }
 }

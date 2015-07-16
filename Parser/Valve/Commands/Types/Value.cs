@@ -7,7 +7,8 @@ namespace Parser.Valve.Commands.Types
 {
     public class Value : Command
     {
-        public Value()
+        public Value(JsonCommand textCommand)
+            : base(textCommand)
         {
             
         }

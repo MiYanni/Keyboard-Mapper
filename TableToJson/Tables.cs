@@ -39,7 +39,7 @@ namespace TableToJson
             var converter = new HtmlTableToJson(_dom["table"], new TableOptions
             {
                 // http://api.jquery.com/text/
-                GlobalTextExtractor = (i, c) => c.Text()
+                GlobalTextExtractor = (i, c) => c.Text().Trim()
             });
             _tables = converter.Generate();
         }

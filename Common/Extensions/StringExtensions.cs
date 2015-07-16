@@ -87,13 +87,13 @@ namespace Common.Extensions
         /// <param name="propertyDelimiter">The delimiter used between properties in the string.</param>
         /// <param name="valueDelimiter">The delimiter used between the property name and value in the string.</param>
         /// <returns>A string representation of the object.</returns>
-        public static string ToReflectedString(this object @this, string propertyDelimiter = ", ", string valueDelimiter = ":")
+        public static string ToReflectedString(this object @this, string propertyDelimiter = ", ", string valueDelimiter = ":", bool hasClassName = true)
         {
             if (@this == null) return String.Empty;
 
             var thisType = @this.GetType();
             var typeName = thisType.IsAnonymous() ? "AnonymousType" : thisType.Name;
-            var propertyStrings = new List<string> { String.Join(valueDelimiter, "Class", typeName) };
+            var propertyStrings = hasClassName ? new List <string> { String.Join(valueDelimiter, "Class", typeName) } : new List<string>();
             var propertyArray = thisType.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.FlattenHierarchy);
 
             propertyStrings.AddRange(propertyArray.Where(p => !p.GetIndexParameters().Any()).Select(p =>
