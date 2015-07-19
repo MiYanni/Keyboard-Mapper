@@ -32,6 +32,8 @@ namespace Parser.Valve.Commands
         {
             TextCommand = textCommand;
             Name = name ?? textCommand.Name;
+            //if (Name == "[mp_autokick]]")
+            //    Name = "mp_autokick";
             Description = textCommand.HelpText;
             IsCheat = String.Equals(textCommand.IsCheat, CheatIndicator, StringComparison.InvariantCultureIgnoreCase);
         }

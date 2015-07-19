@@ -50,6 +50,13 @@ namespace TestParser
             });
             Console.WriteLine("Cheats: " + commandGroups.SelectMany(c => c).Count(c => c.IsCheat));
 
+            var categories =
+                commandGroups.SelectMany(c => c)
+                    .Where(c => !c.Name.StartsWith("_") && c.Name.Contains("_"))
+                    .Select(c => c.Name.Split('_').First()).Distinct().OrderBy(c => c).ToList();
+            Console.WriteLine("Categories: " + categories.Count);
+            categories.ForEach(Console.WriteLine);
+
             Console.WriteLine("Press any key to exit.");
             Console.ReadLine();
         }
