@@ -1,11 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 //using Parser.Valve.Commands.Types;
 //using CommandDecider = System.Tuple<System.Func<Parser.Valve.Commands.JsonCommand, bool>, System.Func<Parser.Valve.Commands.JsonCommand, Parser.Valve.Commands.Command>>;
 
-namespace Parser.Valve.Commands
+namespace Writer.Valve.Commands
 {
     public static class Factory
     {

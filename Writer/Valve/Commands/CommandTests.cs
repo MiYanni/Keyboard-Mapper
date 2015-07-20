@@ -5,9 +5,7 @@ using NUnit.Framework;
 #pragma warning disable 1591
 // ReSharper disable InconsistentNaming
 
-
-
-namespace Parser.Valve.Commands
+namespace Writer.Valve.Commands
 {
     [ExcludeFromCodeCoverage]
     [TestFixture]

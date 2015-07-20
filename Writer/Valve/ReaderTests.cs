@@ -1,10 +1,11 @@
-﻿using NUnit.Framework;
+﻿using System.Diagnostics.CodeAnalysis;
+using NUnit.Framework;
+
 #if UNIT_TEST
 #pragma warning disable 1591
 // ReSharper disable InconsistentNaming
-using System.Diagnostics.CodeAnalysis;
 
-namespace Parser.Valve
+namespace Writer.Valve
 {
     [ExcludeFromCodeCoverage]
     [TestFixture]

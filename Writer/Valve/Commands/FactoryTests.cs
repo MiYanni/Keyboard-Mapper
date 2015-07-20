@@ -2,14 +2,10 @@
 #pragma warning disable 1591
 // ReSharper disable InconsistentNaming
 
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
 using NUnit.Framework;
 
-namespace Parser.Valve.Commands
+namespace Writer.Valve.Commands
 {
     [ExcludeFromCodeCoverage]
     [TestFixture]

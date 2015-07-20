@@ -1,11 +1,13 @@
-using System;
-using System.Runtime.Serialization;
-using Common.Extensions;
-
-namespace Parser.Valve.Commands
+namespace Writer.Valve.Commands
 {
-    public abstract class Command
+    public class Command
     {
+        public const string Name = "bind";
+
+        public string Key { get; set; }
+
+        public string Action { get; set; }
+
         //[DataMember(Name = "Command")]
         //public string Name { get; set; }
 
