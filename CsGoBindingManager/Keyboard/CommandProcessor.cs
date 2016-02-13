@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 
-namespace LoginModule.Keyboard
+namespace CsGoBindingManager.Keyboard
 {
     public static class CommandProcessor
     {

@@ -1,9 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using System.Text;
 
-namespace LoginModule.Keyboard
+namespace CsGoBindingManager.Keyboard
 {
     // http://www.pinvoke.net/default.aspx/shell32.commandlinetoargvw
     public static class CmdLineToArgvW

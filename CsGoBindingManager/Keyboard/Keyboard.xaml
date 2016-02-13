@@ -1,11 +1,11 @@
-﻿<Window x:Class="LoginModule.Keyboard.Keyboard"
+﻿<Window x:Class="CsGoBindingManager.Keyboard.Keyboard"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:keyboard="clr-namespace:LoginModule.Keyboard"
-        Title="CS GO: Keyboard Layout (Alpha 1)" MinHeight="350" MinWidth="840" Height="350" Width="840"
+        xmlns:local="clr-namespace:CsGoBindingManager.Keyboard"
+        Title="CS GO: Binding Manager" MinHeight="350" MinWidth="840" Height="350" Width="840"
         ResizeMode="CanResizeWithGrip" Icon="Counter Strike 1.ico">
     <Window.Resources>
-        <ResourceDictionary xmlns:local="clr-namespace:LoginModule.Keyboard">
+        <ResourceDictionary>
             <Style x:Key="MyFocusVisual">
                 <Setter Property="Control.Template">
                     <Setter.Value>
@@ -114,7 +114,7 @@
                 <ColumnDefinition Width="50*" />
                 <ColumnDefinition Width="50*" />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdTlide">
+            <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
                 <Grid>
                     <TextBlock>Esc</TextBlock>
                     <Viewbox>
@@ -126,7 +126,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmd1">
+            <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd1">
                 <Grid>
                     <TextBlock>F1</TextBlock>
                     <Viewbox>
@@ -138,7 +138,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmd2">
+            <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd2">
                 <Grid>
                     <TextBlock>F2</TextBlock>
                     <Viewbox>
@@ -150,7 +150,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmd3">
+            <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd3">
                 <Grid>
                     <TextBlock>F3</TextBlock>
                     <Viewbox>
@@ -162,7 +162,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="5" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmd4">
+            <Button Grid.Column="5" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd4">
                 <Grid>
                     <TextBlock>F4</TextBlock>
                     <Viewbox>
@@ -174,7 +174,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmd5">
+            <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd5">
                 <Grid>
                     <TextBlock>F5</TextBlock>
                     <Viewbox>
@@ -186,7 +186,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="8" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmd6">
+            <Button Grid.Column="8" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd6">
                 <Grid>
                     <TextBlock>F6</TextBlock>
                     <Viewbox>
@@ -198,7 +198,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="9" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmd7">
+            <Button Grid.Column="9" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd7">
                 <Grid>
                     <TextBlock>F7</TextBlock>
                     <Viewbox>
@@ -210,7 +210,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="10" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmd8">
+            <Button Grid.Column="10" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd8">
                 <Grid>
                     <TextBlock>F8</TextBlock>
                     <Viewbox>
@@ -222,7 +222,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="12" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmd9">
+            <Button Grid.Column="12" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd9">
                 <Grid>
                     <TextBlock>F9</TextBlock>
                     <Viewbox>
@@ -234,7 +234,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="13" Style="{StaticResource InformButton}"  Command="keyboard:TouchScreenKeyboard.Cmd0">
+            <Button Grid.Column="13" Style="{StaticResource InformButton}"  Command="local:TouchScreenKeyboard.Cmd0">
                 <Grid>
                     <TextBlock>F10</TextBlock>
                     <Viewbox>
@@ -246,7 +246,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="14" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdMinus">
+            <Button Grid.Column="14" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdMinus">
                 <Grid>
                     <TextBlock>F11</TextBlock>
                     <Viewbox>
@@ -258,7 +258,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="15" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdPlus">
+            <Button Grid.Column="15" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdPlus">
                 <Grid>
                     <TextBlock>F12</TextBlock>
                     <Viewbox>
@@ -288,7 +288,7 @@
                 <ColumnDefinition Width="50*" />
                 <ColumnDefinition Width="105*" />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdTlide">
+            <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>~</TextBlock>
@@ -303,7 +303,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmd1">
+            <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd1">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>!</TextBlock>
@@ -318,7 +318,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmd2">
+            <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd2">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>@</TextBlock>
@@ -333,7 +333,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmd3">
+            <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd3">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>#</TextBlock>
@@ -348,7 +348,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmd4">
+            <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd4">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>$</TextBlock>
@@ -363,7 +363,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="5" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmd5">
+            <Button Grid.Column="5" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd5">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>%</TextBlock>
@@ -378,7 +378,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="6" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmd6">
+            <Button Grid.Column="6" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd6">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>^</TextBlock>
@@ -393,7 +393,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmd7">
+            <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd7">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>&amp;</TextBlock>
@@ -408,7 +408,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="8" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmd8">
+            <Button Grid.Column="8" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd8">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>*</TextBlock>
@@ -423,7 +423,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="9" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmd9">
+            <Button Grid.Column="9" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd9">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>(</TextBlock>
@@ -438,7 +438,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="10" Style="{StaticResource InformButton}"  Command="keyboard:TouchScreenKeyboard.Cmd0">
+            <Button Grid.Column="10" Style="{StaticResource InformButton}"  Command="local:TouchScreenKeyboard.Cmd0">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>)</TextBlock>
@@ -453,7 +453,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="11" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdMinus">
+            <Button Grid.Column="11" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdMinus">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>—</TextBlock>
@@ -468,7 +468,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="12" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdPlus">
+            <Button Grid.Column="12" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdPlus">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>+</TextBlock>
@@ -483,7 +483,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="13" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdBackspace">
+            <Button Grid.Column="13" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdBackspace">
                 <Grid>
                     <TextBlock>Backspace</TextBlock>
                     <Viewbox>
@@ -513,7 +513,7 @@
                 <ColumnDefinition Width="50*" />
                 <ColumnDefinition Width="77.5*" />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdTab">
+            <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTab">
                 <Grid>
                     <TextBlock>Tab</TextBlock>
                     <Viewbox>
@@ -525,7 +525,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdQ">
+            <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdQ">
                 <Grid>
                     <TextBlock>Q</TextBlock>
                     <Viewbox>
@@ -537,7 +537,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.Cmdw">
+            <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmdw">
                 <Grid>
                     <TextBlock>W</TextBlock>
                     <Viewbox>
@@ -549,7 +549,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdE">
+            <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdE">
                 <Grid>
                     <TextBlock>E</TextBlock>
                     <Viewbox>
@@ -561,7 +561,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdR">
+            <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdR">
                 <Grid>
                     <TextBlock>R</TextBlock>
                     <Viewbox>
@@ -573,7 +573,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="5" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdT">
+            <Button Grid.Column="5" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdT">
                 <Grid>
                     <TextBlock>T</TextBlock>
                     <Viewbox>
@@ -585,7 +585,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="6" Style="{StaticResource InformButton}"  Command="keyboard:TouchScreenKeyboard.CmdY">
+            <Button Grid.Column="6" Style="{StaticResource InformButton}"  Command="local:TouchScreenKeyboard.CmdY">
                 <Grid>
                     <TextBlock>Y</TextBlock>
                     <Viewbox>
@@ -597,7 +597,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdU">
+            <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdU">
                 <Grid>
                     <TextBlock>U</TextBlock>
                     <Viewbox>
@@ -609,7 +609,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="8" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdI">
+            <Button Grid.Column="8" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdI">
                 <Grid>
                     <TextBlock>I</TextBlock>
                     <Viewbox>
@@ -621,7 +621,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="9" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdO">
+            <Button Grid.Column="9" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdO">
                 <Grid>
                     <TextBlock>O</TextBlock>
                     <Viewbox>
@@ -633,7 +633,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="10" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdP">
+            <Button Grid.Column="10" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdP">
                 <Grid>
                     <TextBlock>P</TextBlock>
                     <Viewbox>
@@ -645,7 +645,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="11" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdOpenCrulyBrace">
+            <Button Grid.Column="11" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdOpenCrulyBrace">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>{</TextBlock>
@@ -660,7 +660,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="12" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdEndCrultBrace">
+            <Button Grid.Column="12" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdEndCrultBrace">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>}</TextBlock>
@@ -675,7 +675,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="13" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdOR">
+            <Button Grid.Column="13" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdOR">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>|</TextBlock>
@@ -707,7 +707,7 @@
                 <ColumnDefinition Width="50*" />
                 <ColumnDefinition Width="106.5*" />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Style="{StaticResource InformButton}" VerticalContentAlignment="Top"  Command="keyboard:TouchScreenKeyboard.CmdCapsLock">
+            <Button Grid.Column="0" Style="{StaticResource InformButton}" VerticalContentAlignment="Top"  Command="local:TouchScreenKeyboard.CmdCapsLock">
                 <Grid>
                     <TextBlock>Caps Lock</TextBlock>
                     <Viewbox>
@@ -719,7 +719,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="1" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="keyboard:TouchScreenKeyboard.CmdA">
+            <Button Grid.Column="1" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdA">
                 <Grid>
                     <TextBlock>A</TextBlock>
                     <Viewbox>
@@ -731,7 +731,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="2" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="keyboard:TouchScreenKeyboard.CmdS">
+            <Button Grid.Column="2" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdS">
                 <Grid>
                     <TextBlock>S</TextBlock>
                     <Viewbox>
@@ -743,7 +743,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="3" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="keyboard:TouchScreenKeyboard.CmdD">
+            <Button Grid.Column="3" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdD">
                 <Grid>
                     <TextBlock>D</TextBlock>
                     <Viewbox>
@@ -755,7 +755,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="4" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="keyboard:TouchScreenKeyboard.CmdF">
+            <Button Grid.Column="4" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdF">
                 <Grid>
                     <TextBlock>F</TextBlock>
                     <Viewbox>
@@ -767,7 +767,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="5" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="keyboard:TouchScreenKeyboard.CmdG">
+            <Button Grid.Column="5" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdG">
                 <Grid>
                     <TextBlock>G</TextBlock>
                     <Viewbox>
@@ -779,7 +779,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="6" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="keyboard:TouchScreenKeyboard.CmdH">
+            <Button Grid.Column="6" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdH">
                 <Grid>
                     <TextBlock>H</TextBlock>
                     <Viewbox>
@@ -791,7 +791,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="7" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="keyboard:TouchScreenKeyboard.CmdJ">
+            <Button Grid.Column="7" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdJ">
                 <Grid>
                     <TextBlock>J</TextBlock>
                     <Viewbox>
@@ -803,7 +803,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="8" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="keyboard:TouchScreenKeyboard.CmdK">
+            <Button Grid.Column="8" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdK">
                 <Grid>
                     <TextBlock>K</TextBlock>
                     <Viewbox>
@@ -815,7 +815,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="9" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="keyboard:TouchScreenKeyboard.CmdL">
+            <Button Grid.Column="9" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdL">
                 <Grid>
                     <TextBlock>L</TextBlock>
                     <Viewbox>
@@ -827,7 +827,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="10" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="keyboard:TouchScreenKeyboard.CmdColon">
+            <Button Grid.Column="10" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdColon">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>;</TextBlock>
@@ -842,7 +842,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="11" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="keyboard:TouchScreenKeyboard.CmdDoubleInvertedComma">
+            <Button Grid.Column="11" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdDoubleInvertedComma">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>"</TextBlock>
@@ -857,7 +857,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="12" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="keyboard:TouchScreenKeyboard.CmdEnter">
+            <Button Grid.Column="12" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdEnter">
                 <Grid>
                     <TextBlock>Enter</TextBlock>
                     <Viewbox>
@@ -885,7 +885,7 @@
                 <ColumnDefinition Width="50*" />
                 <ColumnDefinition Width="131.5*" />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdShift">
+            <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdShift">
                 <Grid>
                     <TextBlock>Shift</TextBlock>
                     <Viewbox>
@@ -897,7 +897,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdZ">
+            <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdZ">
                 <Grid>
                     <TextBlock>Z</TextBlock>
                     <Viewbox>
@@ -909,7 +909,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdX">
+            <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdX">
                 <Grid>
                     <TextBlock>X</TextBlock>
                     <Viewbox>
@@ -921,7 +921,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdC">
+            <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdC">
                 <Grid>
                     <TextBlock>C</TextBlock>
                     <Viewbox>
@@ -933,7 +933,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdV">
+            <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdV">
                 <Grid>
                     <TextBlock>V</TextBlock>
                     <Viewbox>
@@ -945,7 +945,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="5" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdB">
+            <Button Grid.Column="5" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdB">
                 <Grid>
                     <TextBlock>B</TextBlock>
                     <Viewbox>
@@ -957,7 +957,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="6" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdN">
+            <Button Grid.Column="6" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdN">
                 <Grid>
                     <TextBlock>N</TextBlock>
                     <Viewbox>
@@ -969,7 +969,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdM">
+            <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdM">
                 <Grid>
                     <TextBlock>M</TextBlock>
                     <Viewbox>
@@ -981,7 +981,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="8" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdLessThan">
+            <Button Grid.Column="8" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdLessThan">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>&lt;</TextBlock>
@@ -996,7 +996,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="9" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdGreaterThan">
+            <Button Grid.Column="9" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdGreaterThan">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>&gt;</TextBlock>
@@ -1011,7 +1011,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="10" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdQuestion">
+            <Button Grid.Column="10" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdQuestion">
                 <Grid>
                     <StackPanel Orientation="Vertical">
                         <TextBlock>?</TextBlock>
@@ -1026,7 +1026,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="11" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdShift">
+            <Button Grid.Column="11" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdShift">
                 <Grid>
                     <TextBlock>Shift</TextBlock>
                     <Viewbox>
@@ -1087,7 +1087,7 @@
                     </Viewbox>
                 </Grid>
             </Button>
-            <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="keyboard:TouchScreenKeyboard.CmdSpaceBar">
+            <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdSpaceBar">
                 <Grid>
                     <TextBlock />
                     <Viewbox>

@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Binding = CsGoBindingManager.Keyboard.Binding;
 
-namespace LoginModule.Keyboard
+namespace CsGoBindingManager.Keyboard
 {
     /// <summary>
     /// Interaction logic for Keyboard.xaml
@@ -21,6 +13,7 @@ namespace LoginModule.Keyboard
         public Keyboard()
         {
             InitializeComponent();
+            Title += " [" + typeof(App).Assembly.GetName().Version + "]";
             var bindings = CommandProcessor.Read();
             //Console.WriteLine(GetType().GetField("TxtLeftShift").GetValue(this));
             //Console.WriteLine((FindName("Txt") as TextBlock).Text);
