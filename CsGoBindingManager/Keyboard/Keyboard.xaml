@@ -1078,7 +1078,7 @@
                                 </TextBlock.LayoutTransform>
                             </TextBlock>
                         </Viewbox>-->
-                        <Border Background="Red" Opacity=".5" />
+                        <Border Background="Red" Opacity=".3" />
                     </Grid>
                 </Button>
                 <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="NotACommand">
@@ -1127,7 +1127,7 @@
                                 </TextBlock.LayoutTransform>
                             </TextBlock>
                         </Viewbox>-->
-                        <Border Background="Red" Opacity=".5" />
+                        <Border Background="Red" Opacity=".3" />
                     </Grid>
                 </Button>
                 <Button Grid.Column="6" Style="{StaticResource InformButton}" Command="NotACommand">
@@ -1140,7 +1140,7 @@
                                 </TextBlock.LayoutTransform>
                             </TextBlock>
                         </Viewbox>-->
-                        <Border Background="Red" Opacity=".5" />
+                        <Border Background="Red" Opacity=".3" />
                     </Grid>
                 </Button>
                 <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="NotACommand">
@@ -1175,25 +1175,27 @@
                 <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
                     <Grid>
                         <TextBlock>PrtScr</TextBlock>
-                        <Viewbox>
+                        <!--<Viewbox>
                             <TextBlock Name="TxtPrintScreen" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
                             </TextBlock>
-                        </Viewbox>
+                        </Viewbox>-->
+                        <Border Background="Red" Opacity=".3" />
                     </Grid>
                 </Button>
                 <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
                     <Grid>
                         <TextBlock>ScrLk</TextBlock>
-                        <Viewbox>
+                        <!--<Viewbox>
                             <TextBlock Name="TxtScrollLock" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
                             </TextBlock>
-                        </Viewbox>
+                        </Viewbox>-->
+                        <Border Background="Red" Opacity=".3" />
                     </Grid>
                 </Button>
                 <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
@@ -1375,13 +1377,14 @@
                 <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
                     <Grid>
                         <TextBlock>NumLk</TextBlock>
-                        <Viewbox>
+                        <!--<Viewbox>
                             <TextBlock Name="TxtNumLock" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
                             </TextBlock>
-                        </Viewbox>
+                        </Viewbox>-->
+                        <Border Background="Red" Opacity=".3" />
                     </Grid>
                 </Button>
                 <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
