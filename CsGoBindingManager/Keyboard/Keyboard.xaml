@@ -18,9 +18,9 @@
                     </Setter.Value>
                 </Setter>
             </Style>
-            <Style x:Key="ShadowStyle">
+            <!--<Style x:Key="ShadowStyle">
                 <Setter Property="Control.Foreground" Value="LightGray" />
-            </Style>
+            </Style>-->
             <Style x:Key="InformButton" TargetType="Button">
                 <Setter Property="OverridesDefaultStyle" Value="True" />
                 <Setter Property="Margin" Value="2" />
@@ -29,6 +29,8 @@
                 <Setter Property="FontWeight" Value="Bold" />
                 <Setter Property="FocusVisualStyle" Value="{StaticResource MyFocusVisual}" />
                 <Setter Property="Background" Value="#323232" />
+                <Setter Property="IsEnabled" Value="True" />
+                <Setter Property="Foreground" Value="DimGray" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
@@ -38,10 +40,7 @@
                                     CornerRadius="3"
                                     BorderBrush="DarkGray"
                                     Background="{TemplateBinding Background}">
-                                <!--<Grid>-->
-                                <!--<ContentPresenter Name="contentShadow" Style="{StaticResource ShadowStyle}" />-->
                                 <ContentPresenter Width="Auto" Height="Auto" Name="content" />
-                                <!--</Grid>-->
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
@@ -49,30 +48,19 @@
                                     <Setter Property="Foreground" Value="#FF4788c8" />
                                 </Trigger>
                                 <Trigger Property="IsPressed" Value="True">
-                                    <Setter Property="Background">
-                                        <Setter.Value>
-                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                                                <GradientStop Color="#FFFFD190" Offset="0.35" />
-                                                <GradientStop Color="Orange" Offset="0.95" />
-                                                <GradientStop Color="#FFFFD190" Offset="1" />
-                                            </LinearGradientBrush>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Setter TargetName="content" Property="RenderTransform">
+                                    <Setter Property="Background" Value="#0D1835" />
+                                    <!--<Setter TargetName="content" Property="RenderTransform">
                                         <Setter.Value>
                                             <TranslateTransform Y="1.0" />
                                         </Setter.Value>
-                                    </Setter>
+                                    </Setter>-->
                                 </Trigger>
                                 <Trigger Property="IsDefaulted" Value="True">
                                     <Setter TargetName="border" Property="BorderBrush" Value="#FF282828" />
                                 </Trigger>
-                                <Trigger Property="IsFocused" Value="True">
+                                <!--<Trigger Property="IsFocused" Value="True">
                                     <Setter TargetName="border" Property="BorderBrush" Value="#FF282828" />
-                                </Trigger>
-                                <Trigger Property="IsEnabled" Value="False">
-                                    <Setter Property="Foreground" Value="DimGray" />
-                                </Trigger>
+                                </Trigger>-->
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
                     </Setter.Value>
@@ -124,7 +112,7 @@
                     <Grid>
                         <TextBlock>Esc</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtEscape" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtEscape" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -136,7 +124,7 @@
                     <Grid>
                         <TextBlock>F1</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtF1" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtF1" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -148,7 +136,7 @@
                     <Grid>
                         <TextBlock>F2</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtF2" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtF2" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -160,7 +148,7 @@
                     <Grid>
                         <TextBlock>F3</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtF3" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtF3" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -172,7 +160,7 @@
                     <Grid>
                         <TextBlock>F4</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtF4" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtF4" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -184,7 +172,7 @@
                     <Grid>
                         <TextBlock>F5</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtF5" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtF5" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -196,7 +184,7 @@
                     <Grid>
                         <TextBlock>F6</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtF6" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtF6" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -208,7 +196,7 @@
                     <Grid>
                         <TextBlock>F7</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtF7" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtF7" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -220,7 +208,7 @@
                     <Grid>
                         <TextBlock>F8</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtF8" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtF8" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -232,7 +220,7 @@
                     <Grid>
                         <TextBlock>F9</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtF9" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtF9" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -244,7 +232,7 @@
                     <Grid>
                         <TextBlock>F10</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtF10" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtF10" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -256,7 +244,7 @@
                     <Grid>
                         <TextBlock>F11</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtF11" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtF11" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -268,7 +256,7 @@
                     <Grid>
                         <TextBlock>F12</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtF12" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtF12" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -301,7 +289,7 @@
                             <TextBlock>`</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="TxtTilde" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtTilde" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -316,7 +304,7 @@
                             <TextBlock>1</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="Txt1" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="Txt1" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -331,7 +319,7 @@
                             <TextBlock>2</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="Txt2" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="Txt2" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -346,7 +334,7 @@
                             <TextBlock>3</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="Txt3" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="Txt3" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -361,7 +349,7 @@
                             <TextBlock>4</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="Txt4" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="Txt4" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -376,7 +364,7 @@
                             <TextBlock>5</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="Txt5" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="Txt5" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -391,7 +379,7 @@
                             <TextBlock>6</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="Txt6" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="Txt6" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -406,7 +394,7 @@
                             <TextBlock>7</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="Txt7" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="Txt7" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -421,7 +409,7 @@
                             <TextBlock>8</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="Txt8" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="Txt8" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -436,7 +424,7 @@
                             <TextBlock>9</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="Txt9" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="Txt9" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -451,7 +439,7 @@
                             <TextBlock>0</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="Txt0" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="Txt0" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -466,7 +454,7 @@
                             <TextBlock>-</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="TxtMinus" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtMinus" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -481,7 +469,7 @@
                             <TextBlock>=</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="TxtEqualSign" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtEqualSign" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -493,7 +481,7 @@
                     <Grid>
                         <TextBlock>Backspace</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtBackspace" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtBackspace" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -523,7 +511,7 @@
                     <Grid>
                         <TextBlock>Tab</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtTab" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtTab" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -535,7 +523,7 @@
                     <Grid>
                         <TextBlock>Q</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtQ" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtQ" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -547,7 +535,7 @@
                     <Grid>
                         <TextBlock>W</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtW" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtW" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -559,7 +547,7 @@
                     <Grid>
                         <TextBlock>E</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtE" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtE" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -567,11 +555,11 @@
                         </Viewbox>
                     </Grid>
                 </Button>
-                <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdR">
+                <Button Grid.Column="4" Style="{StaticResource InformButton}">
                     <Grid>
                         <TextBlock>R</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtR" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtR" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -583,7 +571,7 @@
                     <Grid>
                         <TextBlock>T</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtT" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtT" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -595,7 +583,7 @@
                     <Grid>
                         <TextBlock>Y</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtY" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtY" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -603,11 +591,11 @@
                         </Viewbox>
                     </Grid>
                 </Button>
-                <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdU">
+                <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdU" IsEnabled="False">
                     <Grid>
                         <TextBlock>U</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtU" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtU" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -619,7 +607,7 @@
                     <Grid>
                         <TextBlock>I</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtI" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtI" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -631,7 +619,7 @@
                     <Grid>
                         <TextBlock>O</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtO" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtO" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -643,7 +631,7 @@
                     <Grid>
                         <TextBlock>P</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtP" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtP" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -658,7 +646,7 @@
                             <TextBlock>[</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="TxtLeftBracket" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtLeftBracket" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -673,7 +661,7 @@
                             <TextBlock>]</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="TxtRightBracket" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtRightBracket" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -688,7 +676,7 @@
                             <TextBlock>\</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="TxtBackSlash" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtBackSlash" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -717,7 +705,7 @@
                     <Grid>
                         <TextBlock>Caps Lock</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtCapsLock" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtCapsLock" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -729,7 +717,7 @@
                     <Grid>
                         <TextBlock>A</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtA" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtA" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -741,7 +729,7 @@
                     <Grid>
                         <TextBlock>S</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtS" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtS" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -753,7 +741,7 @@
                     <Grid>
                         <TextBlock>D</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtD" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtD" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -765,7 +753,7 @@
                     <Grid>
                         <TextBlock>F</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtF" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtF" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -777,7 +765,7 @@
                     <Grid>
                         <TextBlock>G</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtG" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtG" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -789,7 +777,7 @@
                     <Grid>
                         <TextBlock>H</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtH" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtH" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -801,7 +789,7 @@
                     <Grid>
                         <TextBlock>J</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtJ" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtJ" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -813,7 +801,7 @@
                     <Grid>
                         <TextBlock>K</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtK" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtK" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -825,7 +813,7 @@
                     <Grid>
                         <TextBlock>L</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtL" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtL" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -840,7 +828,7 @@
                             <TextBlock>:</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="TxtSemiColon" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtSemiColon" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -855,7 +843,7 @@
                             <TextBlock>'</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="TxtSingleQuote" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtSingleQuote" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -867,7 +855,7 @@
                     <Grid>
                         <TextBlock>Enter</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtEnter" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtEnter" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -895,7 +883,7 @@
                     <Grid>
                         <TextBlock>Shift</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtLeftShift" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtLeftShift" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -907,7 +895,7 @@
                     <Grid>
                         <TextBlock>Z</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtZ" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtZ" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -919,7 +907,7 @@
                     <Grid>
                         <TextBlock>X</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtX" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtX" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -931,7 +919,7 @@
                     <Grid>
                         <TextBlock>C</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtC" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtC" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -943,7 +931,7 @@
                     <Grid>
                         <TextBlock>V</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtV" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtV" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -955,7 +943,7 @@
                     <Grid>
                         <TextBlock>B</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtB" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtB" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -967,7 +955,7 @@
                     <Grid>
                         <TextBlock>N</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtN" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtN" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -979,7 +967,7 @@
                     <Grid>
                         <TextBlock>M</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtM" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtM" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -994,7 +982,7 @@
                             <TextBlock>,</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="TxtComma" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtComma" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1009,7 +997,7 @@
                             <TextBlock>.</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="TxtPeriod" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtPeriod" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1024,7 +1012,7 @@
                             <TextBlock>/</TextBlock>
                         </StackPanel>
                         <Viewbox>
-                            <TextBlock Name="TxtForwardSlash" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtForwardSlash" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1036,7 +1024,7 @@
                     <Grid>
                         <TextBlock>Shift</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtRightShift" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtRightShift" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -1060,7 +1048,7 @@
                     <Grid>
                         <TextBlock>Ctrl</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtLeftControl" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtLeftControl" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -1072,7 +1060,7 @@
                     <Grid>
                         <TextBlock>Wnd</TextBlock>
                         <!--<Viewbox>
-                            <TextBlock Name="TxtLeftWindowsKey" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtLeftWindowsKey" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1085,7 +1073,7 @@
                     <Grid>
                         <TextBlock>Alt</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtLeftAlt" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtLeftAlt" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1097,7 +1085,7 @@
                     <Grid>
                         <TextBlock />
                         <Viewbox>
-                            <TextBlock Name="TxtSpacebar" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtSpacebar" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -1109,7 +1097,7 @@
                     <Grid>
                         <TextBlock>Alt</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtRightAlt" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtRightAlt" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1121,7 +1109,7 @@
                     <Grid>
                         <TextBlock>Wnd</TextBlock>
                         <!--<Viewbox>
-                            <TextBlock Name="TxtRightWindowsKey" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtRightWindowsKey" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1134,7 +1122,7 @@
                     <Grid>
                         <TextBlock>RClk</TextBlock>
                         <!--<Viewbox>
-                            <TextBlock Name="TxtRightClickKey" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtRightClickKey" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1147,7 +1135,7 @@
                     <Grid>
                         <TextBlock>Ctrl</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtRightControl" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtRightControl" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1176,7 +1164,7 @@
                     <Grid>
                         <TextBlock>PrtScr</TextBlock>
                         <!--<Viewbox>
-                            <TextBlock Name="TxtPrintScreen" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtPrintScreen" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -1189,7 +1177,7 @@
                     <Grid>
                         <TextBlock>ScrLk</TextBlock>
                         <!--<Viewbox>
-                            <TextBlock Name="TxtScrollLock" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtScrollLock" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -1202,7 +1190,7 @@
                     <Grid>
                         <TextBlock>PauBrk</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtPauseBreak" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtPauseBreak" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="0" />
                                 </TextBlock.LayoutTransform>
@@ -1221,7 +1209,7 @@
                     <Grid>
                         <TextBlock>Ins</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtInsert" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtInsert" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1233,7 +1221,7 @@
                     <Grid>
                         <TextBlock>Home</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtHome" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtHome" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1245,7 +1233,7 @@
                     <Grid>
                         <TextBlock>PgUp</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtPageUp" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtPageUp" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1264,7 +1252,7 @@
                     <Grid>
                         <TextBlock>Del</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtDelete" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtDelete" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1276,7 +1264,7 @@
                     <Grid>
                         <TextBlock>End</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtEnd" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtEnd" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1288,7 +1276,7 @@
                     <Grid>
                         <TextBlock>PgDn</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtPageDown" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtPageDown" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1307,7 +1295,7 @@
                     <Grid>
                         <TextBlock>↑</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtUpArrow" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtUpArrow" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1326,7 +1314,7 @@
                     <Grid>
                         <TextBlock>←</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtLeftArrow" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtLeftArrow" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1338,7 +1326,7 @@
                     <Grid>
                         <TextBlock>↓</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtDownArrow" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtDownArrow" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1350,7 +1338,7 @@
                     <Grid>
                         <TextBlock>→</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtRightArrow" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtRightArrow" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1378,7 +1366,7 @@
                     <Grid>
                         <TextBlock>NumLk</TextBlock>
                         <!--<Viewbox>
-                            <TextBlock Name="TxtNumLock" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtNumLock" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1391,7 +1379,7 @@
                     <Grid>
                         <TextBlock>/</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtKeypadForwardSlash" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtKeypadForwardSlash" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1403,7 +1391,7 @@
                     <Grid>
                         <TextBlock>*</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtKeypadAsterix" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtKeypadAsterix" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1415,7 +1403,7 @@
                     <Grid>
                         <TextBlock>-</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtKeypadMinus" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtKeypadMinus" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1443,7 +1431,7 @@
                                 <TextBlock>Home</TextBlock>
                             </StackPanel>
                             <Viewbox>
-                                <TextBlock Name="TxtKeypad7" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock Name="TxtKeypad7" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                     <TextBlock.LayoutTransform>
                                         <RotateTransform Angle="-45" />
                                     </TextBlock.LayoutTransform>
@@ -1458,7 +1446,7 @@
                                 <TextBlock>←</TextBlock>
                             </StackPanel>
                             <Viewbox>
-                                <TextBlock Name="TxtKeypad4" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock Name="TxtKeypad4" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                     <TextBlock.LayoutTransform>
                                         <RotateTransform Angle="-45" />
                                     </TextBlock.LayoutTransform>
@@ -1479,7 +1467,7 @@
                                 <TextBlock>↑</TextBlock>
                             </StackPanel>
                             <Viewbox>
-                                <TextBlock Name="TxtKeypad8" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock Name="TxtKeypad8" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                     <TextBlock.LayoutTransform>
                                         <RotateTransform Angle="-45" />
                                     </TextBlock.LayoutTransform>
@@ -1494,7 +1482,7 @@
                                 <TextBlock />
                             </StackPanel>
                             <Viewbox>
-                                <TextBlock Name="TxtKeypad5" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock Name="TxtKeypad5" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                     <TextBlock.LayoutTransform>
                                         <RotateTransform Angle="-45" />
                                     </TextBlock.LayoutTransform>
@@ -1515,7 +1503,7 @@
                                 <TextBlock>PgUp</TextBlock>
                             </StackPanel>
                             <Viewbox>
-                                <TextBlock Name="TxtKeypad9" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock Name="TxtKeypad9" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                     <TextBlock.LayoutTransform>
                                         <RotateTransform Angle="-45" />
                                     </TextBlock.LayoutTransform>
@@ -1530,7 +1518,7 @@
                                 <TextBlock>→</TextBlock>
                             </StackPanel>
                             <Viewbox>
-                                <TextBlock Name="TxtKeypad6" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock Name="TxtKeypad6" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                     <TextBlock.LayoutTransform>
                                         <RotateTransform Angle="-45" />
                                     </TextBlock.LayoutTransform>
@@ -1550,7 +1538,7 @@
                                 <TextBlock />
                             </StackPanel>
                             <Viewbox>
-                                <TextBlock Name="TxtKeypadPlus" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock Name="TxtKeypadPlus" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                     <TextBlock.LayoutTransform>
                                         <RotateTransform Angle="-45" />
                                     </TextBlock.LayoutTransform>
@@ -1583,7 +1571,7 @@
                                     <TextBlock>End</TextBlock>
                                 </StackPanel>
                                 <Viewbox>
-                                    <TextBlock Name="TxtKeypad1" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                    <TextBlock Name="TxtKeypad1" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                         <TextBlock.LayoutTransform>
                                             <RotateTransform Angle="-45" />
                                         </TextBlock.LayoutTransform>
@@ -1598,7 +1586,7 @@
                                     <TextBlock>↓</TextBlock>
                                 </StackPanel>
                                 <Viewbox>
-                                    <TextBlock Name="TxtKeypad2" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                    <TextBlock Name="TxtKeypad2" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                         <TextBlock.LayoutTransform>
                                             <RotateTransform Angle="-45" />
                                         </TextBlock.LayoutTransform>
@@ -1614,7 +1602,7 @@
                                 <TextBlock>Ins</TextBlock>
                             </StackPanel>
                             <Viewbox>
-                                <TextBlock Name="TxtKeypad0" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock Name="TxtKeypad0" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                     <TextBlock.LayoutTransform>
                                         <RotateTransform Angle="-45" />
                                     </TextBlock.LayoutTransform>
@@ -1635,7 +1623,7 @@
                                 <TextBlock>PgDn</TextBlock>
                             </StackPanel>
                             <Viewbox>
-                                <TextBlock Name="TxtKeypad3" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock Name="TxtKeypad3" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                     <TextBlock.LayoutTransform>
                                         <RotateTransform Angle="-45" />
                                     </TextBlock.LayoutTransform>
@@ -1650,7 +1638,7 @@
                                 <TextBlock>Del</TextBlock>
                             </StackPanel>
                             <Viewbox>
-                                <TextBlock Name="TxtKeypadPeriod" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock Name="TxtKeypadPeriod" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                     <TextBlock.LayoutTransform>
                                         <RotateTransform Angle="-45" />
                                     </TextBlock.LayoutTransform>
@@ -1670,7 +1658,7 @@
                                 <TextBlock />
                             </StackPanel>
                             <Viewbox>
-                                <TextBlock Name="TxtKeypadEnter" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock Name="TxtKeypadEnter" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                     <TextBlock.LayoutTransform>
                                         <RotateTransform Angle="-45" />
                                     </TextBlock.LayoutTransform>
@@ -1698,7 +1686,7 @@
                     <Grid>
                         <TextBlock>M1</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtMouse1" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtMouse1" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1715,7 +1703,7 @@
                         <Grid>
                             <TextBlock>ScrUp</TextBlock>
                             <Viewbox>
-                                <TextBlock Name="TxtScrollWheelUp" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock Name="TxtScrollWheelUp" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                     <TextBlock.LayoutTransform>
                                         <RotateTransform Angle="-45" />
                                     </TextBlock.LayoutTransform>
@@ -1727,7 +1715,7 @@
                         <Grid>
                             <TextBlock>M3</TextBlock>
                             <Viewbox>
-                                <TextBlock Name="TxtMouse3" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock Name="TxtMouse3" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                     <TextBlock.LayoutTransform>
                                         <RotateTransform Angle="-45" />
                                     </TextBlock.LayoutTransform>
@@ -1740,7 +1728,7 @@
                     <Grid>
                         <TextBlock>M2</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtMouse2" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtMouse2" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1759,7 +1747,7 @@
                     <Grid>
                         <TextBlock>M4</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtMouse4" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtMouse4" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1771,7 +1759,7 @@
                     <Grid>
                         <TextBlock>ScrDn</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtScrollWheelDown" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtScrollWheelDown" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
@@ -1783,7 +1771,7 @@
                     <Grid>
                         <TextBlock>M5</TextBlock>
                         <Viewbox>
-                            <TextBlock Name="TxtMouse5" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                            <TextBlock Name="TxtMouse5" Foreground="Yellow" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-45" />
                                 </TextBlock.LayoutTransform>
