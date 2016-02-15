@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:CsGoBindingManager.Keyboard"
-        Title="CS GO: Binding Manager" MinHeight="350" MinWidth="840" Height="350" Width="840"
+        Title="CS GO: Binding Manager" MinHeight="350" MinWidth="1440" Height="350" Width="1440"
         ResizeMode="CanResizeWithGrip" Icon="Counter Strike 1.ico">
     <Window.Resources>
         <ResourceDictionary>
@@ -24,7 +24,7 @@
             <Style x:Key="InformButton" TargetType="Button">
                 <Setter Property="OverridesDefaultStyle" Value="True" />
                 <Setter Property="Margin" Value="2" />
-                <Setter Property="FontFamily" Value="Verdana" />
+                <Setter Property="FontFamily" Value="Vernanda" />
                 <Setter Property="FontSize" Value="15px" />
                 <Setter Property="FontWeight" Value="Bold" />
                 <Setter Property="FocusVisualStyle" Value="{StaticResource MyFocusVisual}" />
@@ -58,7 +58,6 @@
                                             </LinearGradientBrush>
                                         </Setter.Value>
                                     </Setter>
-
                                     <Setter TargetName="content" Property="RenderTransform">
                                         <Setter.Value>
                                             <TranslateTransform Y="1.0" />
@@ -87,1068 +86,1709 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid Background="Black">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30*" />
-            <RowDefinition Height="50*" />
-            <RowDefinition Height="50*" />
-            <RowDefinition Height="50*" />
-            <RowDefinition Height="50*" />
-            <RowDefinition Height="50*" />
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="30*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="30*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="30*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
-                <Grid>
-                    <TextBlock>Esc</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtEscape" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd1">
-                <Grid>
-                    <TextBlock>F1</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtF1" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd2">
-                <Grid>
-                    <TextBlock>F2</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtF2" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd3">
-                <Grid>
-                    <TextBlock>F3</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtF3" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="5" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd4">
-                <Grid>
-                    <TextBlock>F4</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtF4" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd5">
-                <Grid>
-                    <TextBlock>F5</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtF5" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="8" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd6">
-                <Grid>
-                    <TextBlock>F6</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtF6" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="9" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd7">
-                <Grid>
-                    <TextBlock>F7</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtF7" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="10" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd8">
-                <Grid>
-                    <TextBlock>F8</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtF8" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="12" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd9">
-                <Grid>
-                    <TextBlock>F9</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtF9" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="13" Style="{StaticResource InformButton}"  Command="local:TouchScreenKeyboard.Cmd0">
-                <Grid>
-                    <TextBlock>F10</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtF10" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="14" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdMinus">
-                <Grid>
-                    <TextBlock>F11</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtF11" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="15" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdPlus">
-                <Grid>
-                    <TextBlock>F12</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtF12" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="840*" />
+            <ColumnDefinition Width="180*" />
+            <ColumnDefinition Width="240*" />
+            <ColumnDefinition Width="180*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="50*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>Esc</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtEscape" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd1">
+                    <Grid>
+                        <TextBlock>F1</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtF1" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd2">
+                    <Grid>
+                        <TextBlock>F2</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtF2" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd3">
+                    <Grid>
+                        <TextBlock>F3</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtF3" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="5" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd4">
+                    <Grid>
+                        <TextBlock>F4</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtF4" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd5">
+                    <Grid>
+                        <TextBlock>F5</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtF5" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="8" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd6">
+                    <Grid>
+                        <TextBlock>F6</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtF6" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="9" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd7">
+                    <Grid>
+                        <TextBlock>F7</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtF7" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="10" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd8">
+                    <Grid>
+                        <TextBlock>F8</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtF8" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="12" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd9">
+                    <Grid>
+                        <TextBlock>F9</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtF9" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="13" Style="{StaticResource InformButton}"  Command="local:TouchScreenKeyboard.Cmd0">
+                    <Grid>
+                        <TextBlock>F10</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtF10" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="14" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdMinus">
+                    <Grid>
+                        <TextBlock>F11</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtF11" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="15" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdPlus">
+                    <Grid>
+                        <TextBlock>F12</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtF12" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="105*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>~</TextBlock>
+                            <TextBlock>`</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="TxtTilde" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd1">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>!</TextBlock>
+                            <TextBlock>1</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="Txt1" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd2">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>@</TextBlock>
+                            <TextBlock>2</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="Txt2" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd3">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>#</TextBlock>
+                            <TextBlock>3</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="Txt3" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd4">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>$</TextBlock>
+                            <TextBlock>4</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="Txt4" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="5" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd5">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>%</TextBlock>
+                            <TextBlock>5</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="Txt5" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="6" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd6">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>^</TextBlock>
+                            <TextBlock>6</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="Txt6" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd7">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>&amp;</TextBlock>
+                            <TextBlock>7</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="Txt7" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="8" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd8">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>*</TextBlock>
+                            <TextBlock>8</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="Txt8" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="9" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd9">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>(</TextBlock>
+                            <TextBlock>9</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="Txt9" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="10" Style="{StaticResource InformButton}"  Command="local:TouchScreenKeyboard.Cmd0">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>)</TextBlock>
+                            <TextBlock>0</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="Txt0" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="11" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdMinus">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>—</TextBlock>
+                            <TextBlock>-</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="TxtMinus" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="12" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdPlus">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>+</TextBlock>
+                            <TextBlock>=</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="TxtEqualSign" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="13" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdBackspace">
+                    <Grid>
+                        <TextBlock>Backspace</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtBackspace" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="77.5*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="77.5*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTab">
+                    <Grid>
+                        <TextBlock>Tab</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtTab" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdQ">
+                    <Grid>
+                        <TextBlock>Q</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtQ" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmdw">
+                    <Grid>
+                        <TextBlock>W</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtW" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdE">
+                    <Grid>
+                        <TextBlock>E</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtE" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdR">
+                    <Grid>
+                        <TextBlock>R</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtR" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="5" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdT">
+                    <Grid>
+                        <TextBlock>T</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtT" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="6" Style="{StaticResource InformButton}"  Command="local:TouchScreenKeyboard.CmdY">
+                    <Grid>
+                        <TextBlock>Y</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtY" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdU">
+                    <Grid>
+                        <TextBlock>U</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtU" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="8" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdI">
+                    <Grid>
+                        <TextBlock>I</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtI" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="9" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdO">
+                    <Grid>
+                        <TextBlock>O</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtO" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="10" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdP">
+                    <Grid>
+                        <TextBlock>P</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtP" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="11" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdOpenCrulyBrace">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>{</TextBlock>
+                            <TextBlock>[</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="TxtLeftBracket" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="12" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdEndCrultBrace">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>}</TextBlock>
+                            <TextBlock>]</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="TxtRightBracket" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="13" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdOR">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>|</TextBlock>
+                            <TextBlock>\</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="TxtBackSlash" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="102.5*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="106.5*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource InformButton}" VerticalContentAlignment="Top"  Command="local:TouchScreenKeyboard.CmdCapsLock">
+                    <Grid>
+                        <TextBlock>Caps Lock</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtCapsLock" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="1" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdA">
+                    <Grid>
+                        <TextBlock>A</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtA" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="2" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdS">
+                    <Grid>
+                        <TextBlock>S</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtS" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="3" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdD">
+                    <Grid>
+                        <TextBlock>D</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtD" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="4" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdF">
+                    <Grid>
+                        <TextBlock>F</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtF" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="5" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdG">
+                    <Grid>
+                        <TextBlock>G</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtG" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="6" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdH">
+                    <Grid>
+                        <TextBlock>H</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtH" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="7" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdJ">
+                    <Grid>
+                        <TextBlock>J</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtJ" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="8" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdK">
+                    <Grid>
+                        <TextBlock>K</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtK" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="9" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdL">
+                    <Grid>
+                        <TextBlock>L</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtL" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="10" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdColon">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>;</TextBlock>
+                            <TextBlock>:</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="TxtSemiColon" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="11" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdDoubleInvertedComma">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>"</TextBlock>
+                            <TextBlock>'</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="TxtSingleQuote" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="12" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdEnter">
+                    <Grid>
+                        <TextBlock>Enter</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtEnter" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="131.5*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="131.5*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdShift">
+                    <Grid>
+                        <TextBlock>Shift</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtLeftShift" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdZ">
+                    <Grid>
+                        <TextBlock>Z</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtZ" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdX">
+                    <Grid>
+                        <TextBlock>X</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtX" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdC">
+                    <Grid>
+                        <TextBlock>C</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtC" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdV">
+                    <Grid>
+                        <TextBlock>V</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtV" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="5" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdB">
+                    <Grid>
+                        <TextBlock>B</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtB" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="6" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdN">
+                    <Grid>
+                        <TextBlock>N</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtN" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdM">
+                    <Grid>
+                        <TextBlock>M</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtM" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="8" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdLessThan">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>&lt;</TextBlock>
+                            <TextBlock>,</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="TxtComma" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="9" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdGreaterThan">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>&gt;</TextBlock>
+                            <TextBlock>.</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="TxtPeriod" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="10" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdQuestion">
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>?</TextBlock>
+                            <TextBlock>/</TextBlock>
+                        </StackPanel>
+                        <Viewbox>
+                            <TextBlock Name="TxtForwardSlash" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="11" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdShift">
+                    <Grid>
+                        <TextBlock>Shift</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtRightShift" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="77.5*" />
+                    <ColumnDefinition Width="65*" />
+                    <ColumnDefinition Width="65*" />
+                    <ColumnDefinition Width="320*" />
+                    <ColumnDefinition Width="65*" />
+                    <ColumnDefinition Width="65*" />
+                    <ColumnDefinition Width="65*" />
+                    <ColumnDefinition Width="77.5*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="NotACommand">
+                    <Grid>
+                        <TextBlock>Ctrl</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtLeftControl" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="NotACommand">
+                    <Grid>
+                        <TextBlock>Wnd</TextBlock>
+                        <!--<Viewbox>
+                            <TextBlock Name="TxtLeftWindowsKey" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>-->
+                        <Border Background="Red" Opacity=".5" />
+                    </Grid>
+                </Button>
+                <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="NotACommand">
+                    <Grid>
+                        <TextBlock>Alt</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtLeftAlt" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdSpaceBar">
+                    <Grid>
+                        <TextBlock />
+                        <Viewbox>
+                            <TextBlock Name="TxtSpacebar" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="NotACommand">
+                    <Grid>
+                        <TextBlock>Alt</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtRightAlt" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="5" Style="{StaticResource InformButton}" Command="NotACommand">
+                    <Grid>
+                        <TextBlock>Wnd</TextBlock>
+                        <!--<Viewbox>
+                            <TextBlock Name="TxtRightWindowsKey" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>-->
+                        <Border Background="Red" Opacity=".5" />
+                    </Grid>
+                </Button>
+                <Button Grid.Column="6" Style="{StaticResource InformButton}" Command="NotACommand">
+                    <Grid>
+                        <TextBlock>RClk</TextBlock>
+                        <!--<Viewbox>
+                            <TextBlock Name="TxtRightClickKey" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>-->
+                        <Border Background="Red" Opacity=".5" />
+                    </Grid>
+                </Button>
+                <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="NotACommand">
+                    <Grid>
+                        <TextBlock>Ctrl</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtRightControl" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+            </Grid>
         </Grid>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="105*" />
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>~</TextBlock>
-                        <TextBlock>`</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="TxtTilde" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd1">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>!</TextBlock>
-                        <TextBlock>1</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="Txt1" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd2">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>@</TextBlock>
-                        <TextBlock>2</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="Txt2" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd3">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>#</TextBlock>
-                        <TextBlock>3</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="Txt3" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd4">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>$</TextBlock>
-                        <TextBlock>4</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="Txt4" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="5" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd5">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>%</TextBlock>
-                        <TextBlock>5</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="Txt5" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="6" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd6">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>^</TextBlock>
-                        <TextBlock>6</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="Txt6" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd7">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>&amp;</TextBlock>
-                        <TextBlock>7</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="Txt7" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="8" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd8">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>*</TextBlock>
-                        <TextBlock>8</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="Txt8" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="9" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmd9">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>(</TextBlock>
-                        <TextBlock>9</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="Txt9" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="10" Style="{StaticResource InformButton}"  Command="local:TouchScreenKeyboard.Cmd0">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>)</TextBlock>
-                        <TextBlock>0</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="Txt0" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="11" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdMinus">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>—</TextBlock>
-                        <TextBlock>-</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="TxtMinus" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="12" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdPlus">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>+</TextBlock>
-                        <TextBlock>=</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="TxtEqualSign" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="13" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdBackspace">
-                <Grid>
-                    <TextBlock>Backspace</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtBackspace" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="50*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>PrtScr</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtPrintScreen" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>ScrLk</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtScrollLock" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>PauBrk</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtPauseBreak" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="0" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>Ins</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtInsert" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>Home</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtHome" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>PgUp</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtPageUp" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>Del</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtDelete" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>End</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtEnd" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>PgDn</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtPageDown" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>↑</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtUpArrow" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>←</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtLeftArrow" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>↓</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtDownArrow" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>→</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtRightArrow" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+            </Grid>
         </Grid>
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="77.5*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="77.5*" />
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTab">
-                <Grid>
-                    <TextBlock>Tab</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtTab" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdQ">
-                <Grid>
-                    <TextBlock>Q</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtQ" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.Cmdw">
-                <Grid>
-                    <TextBlock>W</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtW" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdE">
-                <Grid>
-                    <TextBlock>E</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtE" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdR">
-                <Grid>
-                    <TextBlock>R</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtR" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="5" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdT">
-                <Grid>
-                    <TextBlock>T</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtT" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="6" Style="{StaticResource InformButton}"  Command="local:TouchScreenKeyboard.CmdY">
-                <Grid>
-                    <TextBlock>Y</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtY" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdU">
-                <Grid>
-                    <TextBlock>U</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtU" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="8" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdI">
-                <Grid>
-                    <TextBlock>I</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtI" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="9" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdO">
-                <Grid>
-                    <TextBlock>O</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtO" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="10" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdP">
-                <Grid>
-                    <TextBlock>P</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtP" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="11" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdOpenCrulyBrace">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>{</TextBlock>
-                        <TextBlock>[</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="TxtLeftBracket" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="12" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdEndCrultBrace">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>}</TextBlock>
-                        <TextBlock>]</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="TxtRightBracket" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="13" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdOR">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>|</TextBlock>
-                        <TextBlock>\</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="TxtBackSlash" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-        </Grid>
-        <Grid Grid.Row="3">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="102.5*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="106.5*" />
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Style="{StaticResource InformButton}" VerticalContentAlignment="Top"  Command="local:TouchScreenKeyboard.CmdCapsLock">
-                <Grid>
-                    <TextBlock>Caps Lock</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtCapsLock" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="1" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdA">
-                <Grid>
-                    <TextBlock>A</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtA" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="2" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdS">
-                <Grid>
-                    <TextBlock>S</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtS" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="3" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdD">
-                <Grid>
-                    <TextBlock>D</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtD" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="4" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdF">
-                <Grid>
-                    <TextBlock>F</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtF" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="5" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdG">
-                <Grid>
-                    <TextBlock>G</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtG" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="6" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdH">
-                <Grid>
-                    <TextBlock>H</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtH" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="7" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdJ">
-                <Grid>
-                    <TextBlock>J</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtJ" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="8" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdK">
-                <Grid>
-                    <TextBlock>K</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtK" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="9" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdL">
-                <Grid>
-                    <TextBlock>L</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtL" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="10" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdColon">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>;</TextBlock>
-                        <TextBlock>:</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="TxtSemiColon" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="11" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdDoubleInvertedComma">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>"</TextBlock>
-                        <TextBlock>'</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="TxtSingleQuote" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="12" Style="{StaticResource InformButton}" VerticalContentAlignment="Top" Command="local:TouchScreenKeyboard.CmdEnter">
-                <Grid>
-                    <TextBlock>Enter</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtEnter" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-        </Grid>
-        <Grid Grid.Row="4">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="131.5*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="131.5*" />
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdShift">
-                <Grid>
-                    <TextBlock>Shift</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtLeftShift" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdZ">
-                <Grid>
-                    <TextBlock>Z</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtZ" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdX">
-                <Grid>
-                    <TextBlock>X</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtX" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdC">
-                <Grid>
-                    <TextBlock>C</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtC" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdV">
-                <Grid>
-                    <TextBlock>V</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtV" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="5" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdB">
-                <Grid>
-                    <TextBlock>B</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtB" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="6" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdN">
-                <Grid>
-                    <TextBlock>N</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtN" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdM">
-                <Grid>
-                    <TextBlock>M</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtM" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="8" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdLessThan">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>&lt;</TextBlock>
-                        <TextBlock>,</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="TxtComma" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="9" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdGreaterThan">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>&gt;</TextBlock>
-                        <TextBlock>.</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="TxtPeriod" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="10" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdQuestion">
-                <Grid>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock>?</TextBlock>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="100*" />
+                <RowDefinition Height="100*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>NumLk</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtNumLock" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
                         <TextBlock>/</TextBlock>
-                    </StackPanel>
-                    <Viewbox>
-                        <TextBlock Name="TxtForwardSlash" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
+                        <Viewbox>
+                            <TextBlock Name="TxtKeypadForwardSlash" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>*</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtKeypadAsterix" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>-</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtKeypadMinus" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*" />
+                        <RowDefinition Height="50*" />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock>7</TextBlock>
+                                <TextBlock>Home</TextBlock>
+                            </StackPanel>
+                            <Viewbox>
+                                <TextBlock Name="TxtKeypad7" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                    <TextBlock.LayoutTransform>
+                                        <RotateTransform Angle="-45" />
+                                    </TextBlock.LayoutTransform>
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
+                    </Button>
+                    <Button Grid.Row="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock>4</TextBlock>
+                                <TextBlock>←</TextBlock>
+                            </StackPanel>
+                            <Viewbox>
+                                <TextBlock Name="TxtKeypad4" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                    <TextBlock.LayoutTransform>
+                                        <RotateTransform Angle="-45" />
+                                    </TextBlock.LayoutTransform>
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
+                    </Button>
                 </Grid>
-            </Button>
-            <Button Grid.Column="11" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdShift">
-                <Grid>
-                    <TextBlock>Shift</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtRightShift" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*" />
+                        <RowDefinition Height="50*" />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock>8</TextBlock>
+                                <TextBlock>↑</TextBlock>
+                            </StackPanel>
+                            <Viewbox>
+                                <TextBlock Name="TxtKeypad8" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                    <TextBlock.LayoutTransform>
+                                        <RotateTransform Angle="-45" />
+                                    </TextBlock.LayoutTransform>
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
+                    </Button>
+                    <Button Grid.Row="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock>5</TextBlock>
+                                <TextBlock />
+                            </StackPanel>
+                            <Viewbox>
+                                <TextBlock Name="TxtKeypad5" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                    <TextBlock.LayoutTransform>
+                                        <RotateTransform Angle="-45" />
+                                    </TextBlock.LayoutTransform>
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
+                    </Button>
                 </Grid>
-            </Button>
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*" />
+                        <RowDefinition Height="50*" />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock>9</TextBlock>
+                                <TextBlock>PgUp</TextBlock>
+                            </StackPanel>
+                            <Viewbox>
+                                <TextBlock Name="TxtKeypad9" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                    <TextBlock.LayoutTransform>
+                                        <RotateTransform Angle="-45" />
+                                    </TextBlock.LayoutTransform>
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
+                    </Button>
+                    <Button Grid.Row="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock>6</TextBlock>
+                                <TextBlock>→</TextBlock>
+                            </StackPanel>
+                            <Viewbox>
+                                <TextBlock Name="TxtKeypad6" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                    <TextBlock.LayoutTransform>
+                                        <RotateTransform Angle="-45" />
+                                    </TextBlock.LayoutTransform>
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
+                    </Button>
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100*" />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock>+</TextBlock>
+                                <TextBlock />
+                            </StackPanel>
+                            <Viewbox>
+                                <TextBlock Name="TxtKeypadPlus" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                    <TextBlock.LayoutTransform>
+                                        <RotateTransform Angle="-45" />
+                                    </TextBlock.LayoutTransform>
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
+                    </Button>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*" />
+                        <RowDefinition Height="50*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*" />
+                            <ColumnDefinition Width="50*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                            <Grid>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock>1</TextBlock>
+                                    <TextBlock>End</TextBlock>
+                                </StackPanel>
+                                <Viewbox>
+                                    <TextBlock Name="TxtKeypad1" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                        <TextBlock.LayoutTransform>
+                                            <RotateTransform Angle="-45" />
+                                        </TextBlock.LayoutTransform>
+                                    </TextBlock>
+                                </Viewbox>
+                            </Grid>
+                        </Button>
+                        <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                            <Grid>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock>2</TextBlock>
+                                    <TextBlock>↓</TextBlock>
+                                </StackPanel>
+                                <Viewbox>
+                                    <TextBlock Name="TxtKeypad2" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                        <TextBlock.LayoutTransform>
+                                            <RotateTransform Angle="-45" />
+                                        </TextBlock.LayoutTransform>
+                                    </TextBlock>
+                                </Viewbox>
+                            </Grid>
+                        </Button>
+                    </Grid>
+                    <Button Grid.Row="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock>0</TextBlock>
+                                <TextBlock>Ins</TextBlock>
+                            </StackPanel>
+                            <Viewbox>
+                                <TextBlock Name="TxtKeypad0" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                    <TextBlock.LayoutTransform>
+                                        <RotateTransform Angle="-45" />
+                                    </TextBlock.LayoutTransform>
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
+                    </Button>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*" />
+                        <RowDefinition Height="50*" />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock>3</TextBlock>
+                                <TextBlock>PgDn</TextBlock>
+                            </StackPanel>
+                            <Viewbox>
+                                <TextBlock Name="TxtKeypad3" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                    <TextBlock.LayoutTransform>
+                                        <RotateTransform Angle="-45" />
+                                    </TextBlock.LayoutTransform>
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
+                    </Button>
+                    <Button Grid.Row="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock>.</TextBlock>
+                                <TextBlock>Del</TextBlock>
+                            </StackPanel>
+                            <Viewbox>
+                                <TextBlock Name="TxtKeypadPeriod" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                    <TextBlock.LayoutTransform>
+                                        <RotateTransform Angle="-45" />
+                                    </TextBlock.LayoutTransform>
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
+                    </Button>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100*" />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                        <Grid>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock>Enter</TextBlock>
+                                <TextBlock />
+                            </StackPanel>
+                            <Viewbox>
+                                <TextBlock Name="TxtKeypadEnter" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                    <TextBlock.LayoutTransform>
+                                        <RotateTransform Angle="-45" />
+                                    </TextBlock.LayoutTransform>
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
+                    </Button>
+                </Grid>
+            </Grid>
         </Grid>
-        <Grid Grid.Row="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="77.5*" />
-                <ColumnDefinition Width="65*" />
-                <ColumnDefinition Width="65*" />
-                <ColumnDefinition Width="320*" />
-                <ColumnDefinition Width="65*" />
-                <ColumnDefinition Width="65*" />
-                <ColumnDefinition Width="65*" />
-                <ColumnDefinition Width="77.5*" />
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="NotACommand">
-                <Grid>
-                    <TextBlock>Ctrl</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtLeftControl" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
+        <Grid Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80*" />
+                <RowDefinition Height="100*" />
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="50*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>M1</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtMouse1" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*" />
+                        <RowDefinition Height="50*" />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                        <Grid>
+                            <TextBlock>ScrUp</TextBlock>
+                            <Viewbox>
+                                <TextBlock Name="TxtScrollWheelUp" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                    <TextBlock.LayoutTransform>
+                                        <RotateTransform Angle="-45" />
+                                    </TextBlock.LayoutTransform>
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
+                    </Button>
+                    <Button Grid.Row="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                        <Grid>
+                            <TextBlock>M3</TextBlock>
+                            <Viewbox>
+                                <TextBlock Name="TxtMouse3" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                    <TextBlock.LayoutTransform>
+                                        <RotateTransform Angle="-45" />
+                                    </TextBlock.LayoutTransform>
+                                </TextBlock>
+                            </Viewbox>
+                        </Grid>
+                    </Button>
                 </Grid>
-            </Button>
-            <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="NotACommand">
-                <Grid>
-                    <TextBlock>Wnd</TextBlock>
-                    <!--<Viewbox>
-                        <TextBlock Name="TxtLeftWindowsKey" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>-->
-                    <Border Background="Red" Opacity=".5" />
-                </Grid>
-            </Button>
-            <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="NotACommand">
-                <Grid>
-                    <TextBlock>Alt</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtLeftAlt" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="3" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdSpaceBar">
-                <Grid>
-                    <TextBlock />
-                    <Viewbox>
-                        <TextBlock Name="TxtSpacebar" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="0" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="4" Style="{StaticResource InformButton}" Command="NotACommand">
-                <Grid>
-                    <TextBlock>Alt</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtRightAlt" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
-            <Button Grid.Column="5" Style="{StaticResource InformButton}" Command="NotACommand">
-                <Grid>
-                    <TextBlock>Wnd</TextBlock>
-                    <!--<Viewbox>
-                        <TextBlock Name="TxtRightWindowsKey" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>-->
-                    <Border Background="Red" Opacity=".5" />
-                </Grid>
-            </Button>
-            <Button Grid.Column="6" Style="{StaticResource InformButton}" Command="NotACommand">
-                <Grid>
-                    <TextBlock>RClk</TextBlock>
-                    <!--<Viewbox>
-                        <TextBlock Name="TxtRightClickKey" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>-->
-                    <Border Background="Red" Opacity=".5" />
-                </Grid>
-            </Button>
-            <Button Grid.Column="7" Style="{StaticResource InformButton}" Command="NotACommand">
-                <Grid>
-                    <TextBlock>Ctrl</TextBlock>
-                    <Viewbox>
-                        <TextBlock Name="TxtRightControl" Foreground="Cyan" FontWeight="Normal" FontFamily="Consolas" Text="[UNBOUND]">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-45" />
-                            </TextBlock.LayoutTransform>
-                        </TextBlock>
-                    </Viewbox>
-                </Grid>
-            </Button>
+                <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>M2</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtMouse2" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>M4</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtMouse4" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="1" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>ScrDn</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtScrollWheelDown" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="2" Style="{StaticResource InformButton}" Command="local:TouchScreenKeyboard.CmdTlide">
+                    <Grid>
+                        <TextBlock>M5</TextBlock>
+                        <Viewbox>
+                            <TextBlock Name="TxtMouse5" Foreground="Cyan" FontWeight="Normal" FontFamily="#Roboto-Regular" Text="[UNBOUND]">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-45" />
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </Viewbox>
+                    </Grid>
+                </Button>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
